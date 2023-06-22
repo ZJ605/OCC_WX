@@ -4,6 +4,7 @@
 #include "wx/wx.h"
 
 #include "mainwindow.h"
+#include "geometrymodule.h"
 
 class Application : public wxApp
 {
@@ -15,6 +16,7 @@ class Application : public wxApp
 
     private:
     MainWindow* m_mainwin;
+    GeometryModule* m_geommod;
 };
 
 #endif // APPLICATION_H

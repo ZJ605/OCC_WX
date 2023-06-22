@@ -1,12 +1,25 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(const wxString& title):wxFrame(nullptr, wxID_ANY, title)
+#include "icons/t1.xpm"
+
+namespace MainWindowIDs {
+    int MainToolBarT1 = 101;
+}
+
+MainWindow::MainWindow(const wxString& title):wxMDIParentFrame(nullptr, wxID_ANY, title),
+    m_width(1000), m_height(600)
 {
     //this->SetMinSize(wxSize(600,500));
     //this->SetMaxSize(800,600);
+    //this->GetSize(&m_width, &m_height);
+    //std::cout << m_width << std::endl;
+    //wxMessageBox("asdf", m_width);
+    this->SetSize(300,300,m_width, m_height);
 
     setupMainMenu();
     setupToolbars();
+
+    //this->m_drawwindow = new DrawWindow(this);
 }
 
 MainWindow::~MainWindow()
@@ -36,8 +49,15 @@ void MainWindow::setupMainMenu(){
 }
 
 void MainWindow::setupToolbars(){
-    //wxToolBar* toolbar = new wxToolBar(this, wxID_ANY);
-    //toolbar->AddTool();
+
+    wxInitAllImageHandlers();
+
+    wxToolBar* toolbar = this->CreateToolBar();
+
+    wxBitmap t1icon(t1_xpm);
+    toolbar->AddTool(MainWindowIDs::MainToolBarT1,"t1",t1icon);
+    toolbar->Bind(wxEVT_TOOL, &MainWindow::onT1,this);
+    toolbar->Realize();
 }
 
 void MainWindow::geom1(wxCommandEvent&){
@@ -46,4 +66,8 @@ void MainWindow::geom1(wxCommandEvent&){
 
 void MainWindow::tlbr1(wxCommandEvent&){
     std::cout <<"tlbr1" << std::endl;
+}
+
+void MainWindow::onT1(wxCommandEvent&){
+    std::cout <<"t1 pressed" << std::endl;
 }

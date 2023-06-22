@@ -17,6 +17,9 @@
 					<Add directory="C:/BIN/MSYS/mingw64/include/wx-3.0" />
 					<Add directory="C:/BIN/MSYS/mingw64/lib/wx/include/msw-unicode-static-3.0" />
 					<Add directory="include" />
+					<Add directory="images" />
+					<Add directory="C:/BIN/MSYS/mingw64/include/opencascade" />
+					<Add directory="C:/BIN/MSYS/mingw64/lib" />
 				</Compiler>
 				<Linker>
 					<Add library="libwx_mswu_richtext-3.0.a" />
@@ -29,6 +32,59 @@
 					<Add library="libwxjpeg-3.0.a" />
 					<Add library="libwxtiff-3.0.a" />
 					<Add library="libwxzlib-3.0.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKernel.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKGeomBase.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKMath.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBin.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBinL.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBRep.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBinTObj.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBinXCAF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBO.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKBool.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKCAF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKCDF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKD3DHost.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKD3DHostTest.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKDCAF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKDraw.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKExpress.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKFeat.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKFillet.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKG2d.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKG3d.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKGeomAlgo.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKHLR.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKIGES.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKIVtk.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKIVtkDraw.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKLCAF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKMesh.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKOffset.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKOpenGl.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKPrim.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKQADraw.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKRWMesh.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKService.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKShHealing.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKStd.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKStdL.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKSTEP.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKSTEP209.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKSTEPAttr.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKSTEPBase.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKSTL.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKTObj.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKTObjDRAW.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKTopAlgo.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKTopTest.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKV3d.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKVCAF.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKViewerTest.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKVRML.dll.a" />
+					<Add library="C:/BIN/MSYS/mingw64/lib/libTKXCAF.dll.a" />
+					<Add directory="C:/BIN/MSYS/mingw64/lib" />
+					<Add directory="C:/BIN/MSYS/mingw64/bin" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -47,6 +103,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="icons" />
 		</Compiler>
 		<Linker>
 			<Add library="libkernel32.a" />
@@ -69,12 +126,24 @@
 			<Add directory="C:/BIN/MSYS/mingw64/lib" />
 		</Linker>
 		<Unit filename="include/application.h" />
+		<Unit filename="include/drawwindow.h" />
+		<Unit filename="include/geometrymodule.h" />
+		<Unit filename="include/geometrymodulewindow.h" />
 		<Unit filename="include/mainwindow.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="include/messenger.h" />
+		<Unit filename="include/windoweventmanager.h" />
+		<Unit filename="include/wxinteractions2occ.h" />
 		<Unit filename="src/application.cpp" />
+		<Unit filename="src/drawwindow.cpp" />
+		<Unit filename="src/geometrymodule.cpp" />
+		<Unit filename="src/geometrymodulewindow.cpp" />
 		<Unit filename="src/mainwindow.cpp" />
+		<Unit filename="src/windoweventmanager.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />
+			</wxsmith>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
