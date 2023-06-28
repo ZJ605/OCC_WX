@@ -1653,7 +1653,7 @@
 1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\msw\mdi.h
 	"wx/frame.h"
 
-1687425878 source:c:\bin\occprojects\test\wx_occ_1\src\mainwindow.cpp
+1687931513 source:c:\bin\occprojects\test\wx_occ_1\src\mainwindow.cpp
 	"mainwindow.h"
 	"icons/t1.xpm"
 
@@ -1663,8 +1663,9 @@
 	"drawwindow.h"
 	"BRepPrimAPI_MakeBox.hxx"
 
-1687346844 source:c:\bin\occprojects\test\wx_occ_1\src\application.cpp
+1687859785 source:c:\bin\occprojects\test\wx_occ_1\src\application.cpp
 	"application.h"
+	<wx/image.h>
 
 1686898422 c:\bin\occprojects\test\wx_occ_1\include\application.h
 	"wx/wx.h"
@@ -4027,7 +4028,7 @@
 1679469026 c:\bin\msys\mingw64\include\opencascade\ais_walkdelta.hxx
 	<Standard_Real.hxx>
 
-1687433112 source:c:\bin\occprojects\test\wx_occ_1\src\windoweventmanager.cpp
+1687434184 source:c:\bin\occprojects\test\wx_occ_1\src\windoweventmanager.cpp
 	"windoweventmanager.h"
 	<Aspect_Grid.hxx>
 	<AIS_AnimationCamera.hxx>
@@ -4065,14 +4066,18 @@
 	<Prs3d_Drawer.hxx>
 	<Prs3d_TypeOfHLR.hxx>
 
-1687253921 c:\bin\occprojects\test\wx_occ_1\include\geometrymodule.h
+1687777390 c:\bin\occprojects\test\wx_occ_1\include\geometrymodule.h
 	"wx/mdi.h"
+	<list>
+	"TopoDS_Shape.hxx"
+	"BRepPrimAPI_MakeBox.hxx"
 	"geometrymodulewindow.h"
+	"mgeom.h"
 
-1687253921 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodule.cpp
+1687777474 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodule.cpp
 	"geometrymodule.h"
 
-1687425770 c:\bin\occprojects\test\wx_occ_1\include\geometrymodulewindow.h
+1687859381 c:\bin\occprojects\test\wx_occ_1\include\geometrymodulewindow.h
 	"Aspect_Window.hxx"
 	"AIS_InteractiveContext.hxx"
 	"V3d_Viewer.hxx"
@@ -4086,14 +4091,18 @@
 	"TopoDS_Shape.hxx"
 	<list>
 	"wx/mdi.h"
+	"wx/window.h"
 	"messenger.h"
 	"windoweventmanager.h"
+	"mgeom.h"
 
-1687429878 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodulewindow.cpp
+1687949484 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodulewindow.cpp
 	"geometrymodulewindow.h"
 	"wxinteractions2occ.h"
 	"BRepPrimAPI_MakeBox.hxx"
 	"AIS_Shape.hxx"
+	"mgeom_lens.h"
+	"mgeom_paraboloid.h"
 	<iostream>
 
 1687248800 c:\bin\occprojects\test\wx_occ_1\include\wxinteractions2occ.h
@@ -4244,4 +4253,1340 @@
 
 1679469026 c:\bin\msys\mingw64\include\opencascade\v3d_positionlight.hxx
 	<V3d_Light.hxx>
+
+1687848683 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_lens.cpp
+	"mgeom_lens.h"
+
+1687848631 c:\bin\occprojects\test\wx_occ_1\include\mgeom_lens.h
+	"mgeom.h"
+	"BRepBuilderAPI_MakeEdge.hxx"
+	"BRepBuilderAPI_MakeWire.hxx"
+	"BRepBuilderAPI_MakeFace.hxx"
+	"BRepBuilderAPI_Transform.hxx"
+	"BRepPrimAPI_MakeBox.hxx"
+	"BRepPrimAPI_MakeCylinder.hxx"
+	"BRepPrimAPI_MakePrism.hxx"
+	"GC_MakeArcOfCircle.hxx"
+	"GC_MakeSegment.hxx"
+	"GCE2d_MakeSegment.hxx"
+	"Geom2d_Ellipse.hxx"
+	"Geom2d_TrimmedCurve.hxx"
+	"BRepFilletAPI_MakeFillet.hxx"
+	"TopExp.hxx"
+	"TopExp_Explorer.hxx"
+	"TopoDS.hxx"
+	"BRepAlgo.hxx"
+	"BRepAlgoAPI_Fuse.hxx"
+	"Geom_Plane.hxx"
+	"BRepOffsetAPI_MakeThickSolid.hxx"
+	"Geom_CylindricalSurface.hxx"
+	"BRepLib.hxx"
+	"BRepOffsetAPI_ThruSections.hxx"
+	"BRepPrimAPI_MakeBox.hxx"
+
+1687847856 c:\bin\occprojects\test\wx_occ_1\include\mgeom.h
+	"Geom_Line.hxx"
+	"TopoDS.hxx"
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_line.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<gp_Ax1.hxx>
+	<Geom_Curve.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+
+1687780120 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom.cpp
+	"mgeom.h"
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_makeedge.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepLib_MakeEdge.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<Standard_Real.hxx>
+	<BRepBuilderAPI_EdgeError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_makeedge.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepLib_EdgeError.hxx>
+	<TopoDS_Vertex.hxx>
+	<BRepLib_MakeShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_edgeerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_makeshape.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopoDS_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<BRepLib_Command.hxx>
+	<BRepLib_ShapeModification.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_command.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Boolean.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_shapemodification.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_edgeerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_makewire.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepLib_MakeWire.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<BRepBuilderAPI_WireError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_makewire.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepLib_WireError.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Vertex.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_IndexedMapOfShape.hxx>
+	<BRepLib_MakeShape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<Bnd_Box.hxx>
+	<NCollection_UBTree.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_wireerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_datamapofshapeshape.hxx
+	<TopoDS_Shape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_shapemaphasher.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<TopTools_ShapeMapHasher.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_shapemaphasher.lxx
+	<TopoDS_Shape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_indexedmapofshape.hxx
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_IndexedMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_ubtree.hxx
+	<NCollection_BaseAllocator.hxx>
+	<NCollection_DefineAlloc.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_wireerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_makeface.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepLib_MakeFace.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<Standard_Real.hxx>
+	<BRepBuilderAPI_FaceError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_makeface.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepLib_FaceError.hxx>
+	<BRepLib_MakeShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib_faceerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_faceerror.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_transform.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<gp_Trsf.hxx>
+	<BRepBuilderAPI_ModifyShape.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepbuilderapi_modifyshape.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepTools_Modifier.hxx>
+	<TopoDS_Shape.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breptools_modifier.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_MapOfShape.hxx>
+	<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Face.hxx>
+	<NCollection_DataMap.hxx>
+	<TopoDS_Shape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<TopLoc_Location.hxx>
+	<Message_ProgressRange.hxx>
+	<BRepTools_Modifier.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_mapofshape.hxx
+	<TopoDS_Shape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_Map.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_indexeddatamapofshapelistofshape.hxx
+	<TopoDS_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_IndexedDataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breptools_modifier.lxx
+	<Standard_NoSuchObject.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprimapi_makecylinder.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepPrim_Cylinder.hxx>
+	<BRepPrimAPI_MakeOneAxis.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprim_cylinder.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepPrim_Revolution.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprim_revolution.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepPrim_OneAxis.hxx>
+	<Standard_Real.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprim_oneaxis.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepPrim_Builder.hxx>
+	<gp_Ax2.hxx>
+	<TopoDS_Shell.hxx>
+	<TopoDS_Vertex.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Wire.hxx>
+	<TopoDS_Face.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprimapi_makeoneaxis.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprimapi_makeprism.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepSweep_Prism.hxx>
+	<BRepPrimAPI_MakeSweep.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_prism.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepSweep_Translation.hxx>
+	<Standard_Boolean.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_translation.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<gp_Vec.hxx>
+	<Standard_Boolean.hxx>
+	<BRepSweep_Trsf.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_trsf.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<TopLoc_Location.hxx>
+	<BRepSweep_NumLinearRegularSweep.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_numlinearregularsweep.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepSweep_Builder.hxx>
+	<TopoDS_Shape.hxx>
+	<BRepSweep_Tool.hxx>
+	<Sweep_NumShapeTool.hxx>
+	<TopTools_Array2OfShape.hxx>
+	<TColStd_Array2OfBoolean.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_builder.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRep_Builder.hxx>
+	<TopAbs_Orientation.hxx>
+	<BRepSweep_Builder.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_builder.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepsweep_tool.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_IndexedMapOfShape.hxx>
+	<TopAbs_ShapeEnum.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\sweep_numshapetool.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Sweep_NumShape.hxx>
+	<Standard_Integer.hxx>
+	<TopAbs_ShapeEnum.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\sweep_numshape.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopAbs_ShapeEnum.hxx>
+	<Standard_Boolean.hxx>
+	<TopAbs_Orientation.hxx>
+	<Sweep_NumShape.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\sweep_numshape.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_array2ofshape.hxx
+	<TopoDS_Shape.hxx>
+	<NCollection_Array2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\tcolstd_array2ofboolean.hxx
+	<NCollection_Array2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepprimapi_makesweep.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gc_makearcofcircle.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<GC_Root.hxx>
+	<Geom_TrimmedCurve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gc_root.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<gce_ErrorType.hxx>
+	<GC_Root.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gce_errortype.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gc_root.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_trimmedcurve.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_BoundedCurve.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_boundedcurve.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_Curve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gc_makesegment.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<GC_Root.hxx>
+	<Geom_TrimmedCurve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gce2d_makesegment.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<GCE2d_Root.hxx>
+	<Geom2d_TrimmedCurve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gce2d_root.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<gce_ErrorType.hxx>
+	<GCE2d_Root.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gce2d_root.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2d_trimmedcurve.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom2d_BoundedCurve.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2d_boundedcurve.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom2d_Curve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2d_ellipse.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom2d_Conic.hxx>
+	<Standard_Integer.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2d_conic.hxx
+	<gp_Ax22d.hxx>
+	<Geom2d_Curve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_ax22d.hxx
+	<gp_Ax2d.hxx>
+	<gp_Dir2d.hxx>
+	<gp_Pnt2d.hxx>
+	<gp_Trsf2d.hxx>
+	<gp_Vec2d.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepfilletapi_makefillet.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<ChFi3d_FilBuilder.hxx>
+	<TopTools_MapOfShape.hxx>
+	<BRepFilletAPI_LocalOperation.hxx>
+	<ChFi3d_FilletShape.hxx>
+	<Standard_Real.hxx>
+	<GeomAbs_Shape.hxx>
+	<TColgp_Array1OfPnt2d.hxx>
+	<Standard_Integer.hxx>
+	<TopTools_ListOfShape.hxx>
+	<ChFiDS_SecHArray1.hxx>
+	<ChFiDS_ErrorStatus.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfi3d_filbuilder.hxx
+	<BRepAdaptor_Surface.hxx>
+	<BlendFunc_SectionShape.hxx>
+	<ChFi3d_Builder.hxx>
+	<ChFi3d_FilletShape.hxx>
+	<ChFiDS_ListOfStripe.hxx>
+	<ChFiDS_ElSpine.hxx>
+	<ChFiDS_SecHArray1.hxx>
+	<ChFiDS_SequenceOfSurfData.hxx>
+	<math_Vector.hxx>
+	<TopAbs_Orientation.hxx>
+	<TopAbs_State.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepadaptor_surface.hxx
+	<GeomAdaptor_Surface.hxx>
+	<GeomAbs_Shape.hxx>
+	<GeomAbs_SurfaceType.hxx>
+	<gp_Trsf.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<TopoDS_Face.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomadaptor_surface.hxx
+	<Adaptor3d_Surface.hxx>
+	<BSplSLib_Cache.hxx>
+	<GeomAbs_Shape.hxx>
+	<GeomEvaluator_Surface.hxx>
+	<Geom_Surface.hxx>
+	<Standard_NullObject.hxx>
+	<TColStd_Array1OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\adaptor3d_surface.hxx
+	<Adaptor3d_Curve.hxx>
+	<GeomAbs_Shape.hxx>
+	<GeomAbs_SurfaceType.hxx>
+	<gp_Ax1.hxx>
+	<gp_Cylinder.hxx>
+	<gp_Cone.hxx>
+	<gp_Pln.hxx>
+	<gp_Sphere.hxx>
+	<gp_Torus.hxx>
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TColStd_Array1OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\adaptor3d_curve.hxx
+	<gp_Circ.hxx>
+	<gp_Elips.hxx>
+	<gp_Hypr.hxx>
+	<gp_Parab.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<GeomAbs_CurveType.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_circ.hxx
+	<gp_Ax1.hxx>
+	<gp_Ax2.hxx>
+	<gp_Pnt.hxx>
+	<gp_Trsf.hxx>
+	<gp_Vec.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_elips.hxx
+	<gp.hxx>
+	<gp_Ax1.hxx>
+	<gp_Ax2.hxx>
+	<gp_Pnt.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_hypr.hxx
+	<gp.hxx>
+	<gp_Ax1.hxx>
+	<gp_Ax2.hxx>
+	<gp_Pnt.hxx>
+	<Standard_DomainError.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_parab.hxx
+	<gp_Ax1.hxx>
+	<gp_Lin.hxx>
+	<gp_Pnt.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomabs_curvetype.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomabs_surfacetype.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_cylinder.hxx
+	<gp_Ax1.hxx>
+	<gp_Ax3.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_cone.hxx
+	<gp_Ax1.hxx>
+	<gp_Ax3.hxx>
+	<gp_Pnt.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_sphere.hxx
+	<gp_Ax1.hxx>
+	<gp_Ax3.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_torus.hxx
+	<gp_Ax1.hxx>
+	<gp_Ax3.hxx>
+	<Standard_ConstructionError.hxx>
+	<TColStd_Array1OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplslib_cache.hxx
+	<TColStd_HArray2OfReal.hxx>
+	<TColStd_Array2OfReal.hxx>
+	<BSplCLib_CacheParams.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\tcolstd_harray2ofreal.hxx
+	<TColStd_Array2OfReal.hxx>
+	<NCollection_DefineHArray2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_defineharray2.hxx
+	<Standard_Type.hxx>
+	<NCollection_DefineArray2.hxx>
+	<Standard_Transient.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_definearray2.hxx
+	<NCollection_Array2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib_cacheparams.hxx
+	<BSplCLib.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib.hxx
+	<BSplCLib_EvaluatorFunction.hxx>
+	<BSplCLib_KnotDistribution.hxx>
+	<BSplCLib_MultDistribution.hxx>
+	<GeomAbs_BSplKnotDistribution.hxx>
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Integer.hxx>
+	<Standard_Real.hxx>
+	<TColgp_Array1OfPnt.hxx>
+	<TColgp_Array1OfPnt2d.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<TColStd_Array2OfReal.hxx>
+	<TColStd_HArray1OfInteger.hxx>
+	<TColStd_HArray1OfReal.hxx>
+	<BSplCLib.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib_evaluatorfunction.hxx
+	<Standard_TypeDef.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib_knotdistribution.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib_multdistribution.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomabs_bsplknotdistribution.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib.lxx
+	<PLib.hxx>
+	<TColgp_Array1OfPnt.hxx>
+	<TColgp_Array1OfPnt2d.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\plib.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<TColStd_Array2OfReal.hxx>
+	<TColgp_Array1OfPnt.hxx>
+	<TColgp_Array1OfPnt2d.hxx>
+	<Standard_Boolean.hxx>
+	<TColgp_Array2OfPnt.hxx>
+	<GeomAbs_Shape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\tcolgp_array2ofpnt.hxx
+	<gp_Pnt.hxx>
+	<NCollection_Array2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomevaluator_surface.hxx
+	<Standard_Transient.hxx>
+	<Standard_Type.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\blendfunc_sectionshape.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfi3d_builder.hxx
+	<BRepAdaptor_Curve2d.hxx>
+	<BRepAdaptor_Surface.hxx>
+	<GeomAbs_Shape.hxx>
+	<ChFiDS_ErrorStatus.hxx>
+	<ChFiDS_Map.hxx>
+	<ChFiDS_Regularities.hxx>
+	<ChFiDS_SequenceOfSurfData.hxx>
+	<ChFiDS_StripeMap.hxx>
+	<ChFiDS_ElSpine.hxx>
+	<math_Vector.hxx>
+	<TopoDS_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<TopTools_DataMapOfShapeListOfInteger.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopAbs_Orientation.hxx>
+	<TopAbs_State.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepadaptor_curve2d.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Face.hxx>
+	<Geom2dAdaptor_Curve.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2dadaptor_curve.hxx
+	<Adaptor2d_Curve2d.hxx>
+	<BSplCLib_Cache.hxx>
+	<Geom2d_Curve.hxx>
+	<Geom2dEvaluator_Curve.hxx>
+	<GeomAbs_CurveType.hxx>
+	<GeomAbs_Shape.hxx>
+	<gp_Pnt2d.hxx>
+	<Standard_NullObject.hxx>
+	<TColStd_Array1OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\adaptor2d_curve2d.hxx
+	<GeomAbs_CurveType.hxx>
+	<GeomAbs_Shape.hxx>
+	<gp_Lin2d.hxx>
+	<gp_Circ2d.hxx>
+	<gp_Elips2d.hxx>
+	<gp_Hypr2d.hxx>
+	<gp_Parab2d.hxx>
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TColStd_Array1OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_lin2d.hxx
+	<gp_Ax2d.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_circ2d.hxx
+	<gp_Ax22d.hxx>
+	<gp_Ax2d.hxx>
+	<gp_Pnt2d.hxx>
+	<gp_Trsf2d.hxx>
+	<gp_Vec2d.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_elips2d.hxx
+	<gp.hxx>
+	<gp_Ax22d.hxx>
+	<gp_Ax2d.hxx>
+	<gp_Pnt2d.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_hypr2d.hxx
+	<gp.hxx>
+	<gp_Ax22d.hxx>
+	<gp_Ax2d.hxx>
+	<gp_Pnt2d.hxx>
+	<Standard_DomainError.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\gp_parab2d.hxx
+	<gp_Ax22d.hxx>
+	<gp_Ax2d.hxx>
+	<gp_Pnt2d.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bsplclib_cache.hxx
+	<BSplCLib_CacheParams.hxx>
+	<TColStd_HArray2OfReal.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom2devaluator_curve.hxx
+	<Standard_Transient.hxx>
+	<Standard_Type.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_errorstatus.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_map.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
+	<TopAbs_ShapeEnum.hxx>
+	<Standard_Boolean.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_regularities.hxx
+	<ChFiDS_Regul.hxx>
+	<NCollection_List.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_regul.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Boolean.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_sequenceofsurfdata.hxx
+	<ChFiDS_SurfData.hxx>
+	<NCollection_Sequence.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_surfdata.hxx
+	<Standard.hxx>
+	<ChFiDS_CommonPoint.hxx>
+	<ChFiDS_FaceInterference.hxx>
+	<gp_Pnt2d.hxx>
+	<Standard_Real.hxx>
+	<Standard_Integer.hxx>
+	<TopAbs_Orientation.hxx>
+	<Standard_Transient.hxx>
+	<ChFiDS_SurfData.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_commonpoint.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Vertex.hxx>
+	<gp_Pnt.hxx>
+	<gp_Vec.hxx>
+	<Standard_Boolean.hxx>
+	<TopAbs_Orientation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_faceinterference.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Real.hxx>
+	<Standard_Integer.hxx>
+	<TopAbs_Orientation.hxx>
+	<Standard_Boolean.hxx>
+	<ChFiDS_FaceInterference.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_faceinterference.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_surfdata.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_stripemap.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<ChFiDS_IndexedDataMapOfVertexListOfStripe.hxx>
+	<Standard_Integer.hxx>
+	<ChFiDS_ListOfStripe.hxx>
+	<ChFiDS_StripeMap.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_indexeddatamapofvertexlistofstripe.hxx
+	<TopoDS_Vertex.hxx>
+	<ChFiDS_ListOfStripe.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_IndexedDataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_listofstripe.hxx
+	<ChFiDS_Stripe.hxx>
+	<NCollection_List.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_stripe.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<ChFiDS_HData.hxx>
+	<Standard_Integer.hxx>
+	<TopAbs_Orientation.hxx>
+	<Standard_Transient.hxx>
+	<ChFiDS_Stripe.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_hdata.hxx
+	<ChFiDS_SequenceOfSurfData.hxx>
+	<NCollection_DefineHSequence.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_definehsequence.hxx
+	<Standard_Type.hxx>
+	<NCollection_DefineSequence.hxx>
+	<Standard_Transient.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_definesequence.hxx
+	<NCollection_Sequence.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_stripe.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_stripemap.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_elspine.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<GeomAdaptor_Curve.hxx>
+	<gp_Pnt.hxx>
+	<gp_Vec.hxx>
+	<TColgp_SequenceOfAx1.hxx>
+	<Adaptor3d_Curve.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<GeomAbs_CurveType.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomadaptor_curve.hxx
+	<Adaptor3d_Curve.hxx>
+	<BSplCLib_Cache.hxx>
+	<Geom_Curve.hxx>
+	<GeomAbs_Shape.hxx>
+	<GeomEvaluator_Curve.hxx>
+	<Standard_NullObject.hxx>
+	<Standard_ConstructionError.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomevaluator_curve.hxx
+	<Standard_Transient.hxx>
+	<Standard_Type.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\tcolgp_sequenceofax1.hxx
+	<gp_Ax1.hxx>
+	<NCollection_Sequence.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\math_vector.hxx
+	<NCollection_Array1.hxx>
+	<NCollection_LocalArray.hxx>
+	<gp_XY.hxx>
+	<gp_XYZ.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\ncollection_localarray.hxx
+	<Standard.hxx>
+	<Standard_TypeDef.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_datamapofshapelistofinteger.hxx
+	<TopoDS_Shape.hxx>
+	<TColStd_ListOfInteger.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfi3d_filletshape.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_secharray1.hxx
+	<ChFiDS_SecArray1.hxx>
+	<NCollection_DefineHArray1.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_secarray1.hxx
+	<ChFiDS_CircSection.hxx>
+	<NCollection_Array1.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_circsection.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<gp_Circ.hxx>
+	<gp_Lin.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepfilletapi_localoperation.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<Standard_Integer.hxx>
+	<ChFiDS_SecHArray1.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topexp.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_IndexedMapOfShape.hxx>
+	<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
+	<TopTools_MapOfShape.hxx>
+	<TopoDS_Vertex.hxx>
+	<Standard_Boolean.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topexp_explorer.hxx
+	<TopExp_Stack.hxx>
+	<TopoDS_Iterator.hxx>
+	<TopoDS_Shape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topexp_stack.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topods_iterator.hxx
+	<Standard_NoSuchObject.hxx>
+	<TopoDS_Shape.hxx>
+	<TopoDS_ListIteratorOfListOfShape.hxx>
+	<TopAbs_Orientation.hxx>
+	<TopLoc_Location.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topods_listiteratoroflistofshape.hxx
+	<TopoDS_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topods.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<TopoDS.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\topods.lxx
+	<TopAbs_ShapeEnum.hxx>
+	<TopoDS_Shape.hxx>
+	<Standard_TypeMismatch.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgo.hxx
+	<GeomAbs_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgoapi_fuse.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<BRepAlgoAPI_BooleanOperation.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgoapi_booleanoperation.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BOPAlgo_Operation.hxx>
+	<BRepAlgoAPI_BuilderAlgo.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bopalgo_operation.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgoapi_builderalgo.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BOPAlgo_GlueEnum.hxx>
+	<BOPAlgo_PPaveFiller.hxx>
+	<BOPAlgo_PBuilder.hxx>
+	<BRepAlgoAPI_Algo.hxx>
+	<BRepTools_History.hxx>
+	<Precision.hxx>
+	<Standard_Real.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bopalgo_glueenum.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bopalgo_ppavefiller.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bopalgo_pbuilder.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgoapi_algo.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Integer.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<BOPAlgo_Options.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\bopalgo_options.hxx
+	<Message_Report.hxx>
+	<Standard_OStream.hxx>
+	<NCollection_BaseAllocator.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\message_report.hxx
+	<Message_Level.hxx>
+	<Message_ListOfAlert.hxx>
+	<Message_MetricType.hxx>
+	<NCollection_IndexedMap.hxx>
+	<NCollection_Sequence.hxx>
+	<Standard_Mutex.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\message_level.hxx
+	<Message.hxx>
+	<Message_AlertExtended.hxx>
+	<Message_Gravity.hxx>
+	<Message_Messenger.hxx>
+	<Standard.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\message_alertextended.hxx
+	<Message_Alert.hxx>
+	<Message_Gravity.hxx>
+	<TCollection_AsciiString.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\message_alert.hxx
+	<Standard_Type.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\message_listofalert.hxx
+	<Message_Alert.hxx>
+	<NCollection_List.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breptools_history.hxx
+	<NCollection_Handle.hxx>
+	<TopExp.hxx>
+	<TopTools_DataMapOfShapeListOfShape.hxx>
+	<TopTools_MapOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_datamapofshapelistofshape.hxx
+	<TopoDS_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_plane.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_ElementarySurface.hxx>
+	<Standard_Integer.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_elementarysurface.hxx
+	<gp_Ax3.hxx>
+	<Geom_Surface.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffsetapi_makethicksolid.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepOffsetAPI_MakeOffsetShape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<BRepOffset_Mode.hxx>
+	<Standard_Boolean.hxx>
+	<GeomAbs_JoinType.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffsetapi_makeoffsetshape.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepOffset_MakeOffset.hxx>
+	<BRepOffset_MakeSimpleOffset.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<BRepOffset_Mode.hxx>
+	<GeomAbs_JoinType.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_makeoffset.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopoDS_Shape.hxx>
+	<TopoDS_Compound.hxx>
+	<BRepOffset_Mode.hxx>
+	<GeomAbs_JoinType.hxx>
+	<TopTools_IndexedMapOfShape.hxx>
+	<BRepOffset_Analyse.hxx>
+	<BRepAlgo_Image.hxx>
+	<TopTools_ListOfShape.hxx>
+	<BRepOffset_Error.hxx>
+	<BRepOffset_MakeLoops.hxx>
+	<TopTools_MapOfShape.hxx>
+	<BRepOffset_DataMapOfShapeOffset.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<Message_ProgressRange.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_mode.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geomabs_jointype.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_analyse.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<TopoDS_Shape.hxx>
+	<BRepOffset_DataMapOfShapeListOfInterval.hxx>
+	<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
+	<BRepOffset_ListOfInterval.hxx>
+	<ChFiDS_TypeOfConcavity.hxx>
+	<TopTools_DataMapOfShapeListOfShape.hxx>
+	<TopTools_DataMapOfShapeReal.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<TopTools_MapOfShape.hxx>
+	<Message_ProgressRange.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_datamapofshapelistofinterval.hxx
+	<TopoDS_Shape.hxx>
+	<BRepOffset_ListOfInterval.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_listofinterval.hxx
+	<BRepOffset_Interval.hxx>
+	<NCollection_List.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_interval.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Real.hxx>
+	<ChFiDS_TypeOfConcavity.hxx>
+	<BRepOffset_Interval.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\chfids_typeofconcavity.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_interval.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_datamapofshapereal.hxx
+	<TopoDS_Shape.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepalgo_image.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_ListOfShape.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_DataMapOfShapeListOfShape.hxx>
+	<Standard_Boolean.hxx>
+	<TopAbs_ShapeEnum.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_error.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_makeloops.hxx
+	<Message_ProgressRange.hxx>
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_ListOfShape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_datamapofshapeoffset.hxx
+	<TopoDS_Shape.hxx>
+	<BRepOffset_Offset.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_offset.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<BRepOffset_Status.hxx>
+	<TopoDS_Face.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<GeomAbs_JoinType.hxx>
+	<GeomAbs_Shape.hxx>
+	<TopTools_ListOfShape.hxx>
+	<BRepOffset_Offset.lxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_status.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_offset.lxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffset_makesimpleoffset.hxx
+	<BRepTools_Modifier.hxx>
+	<ShapeBuild_ReShape.hxx>
+	<NCollection_DataMap.hxx>
+	<Standard_Macro.hxx>
+	<Standard_Real.hxx>
+	<TCollection_AsciiString.hxx>
+	<TopoDS_Edge.hxx>
+	<TopoDS_Face.hxx>
+	<TopoDS_Vertex.hxx>
+	<TopoDS_Shape.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\shapebuild_reshape.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<BRepTools_ReShape.hxx>
+	<TopAbs_ShapeEnum.hxx>
+	<Standard_Integer.hxx>
+	<ShapeExtend_Status.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breptools_reshape.hxx
+	<BRepTools_History.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_MapOfShape.hxx>
+	<Standard_Integer.hxx>
+	<Standard_Transient.hxx>
+	<TopAbs_ShapeEnum.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\shapeextend_status.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_cylindricalsurface.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_ElementarySurface.hxx>
+	<Standard_Integer.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\breplib.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<Standard_Real.hxx>
+	<Standard_Boolean.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+	<TopoDS.hxx>
+	<TopoDS_Edge.hxx>
+	<TopTools_ListOfShape.hxx>
+	<NCollection_List.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\brepoffsetapi_thrusections.hxx
+	<Standard.hxx>
+	<Standard_DefineAlloc.hxx>
+	<Standard_Handle.hxx>
+	<TopTools_SequenceOfShape.hxx>
+	<TopoDS_Face.hxx>
+	<TopTools_DataMapOfShapeShape.hxx>
+	<TopTools_DataMapOfShapeListOfInteger.hxx>
+	<TopTools_DataMapOfShapeInteger.hxx>
+	<GeomAbs_Shape.hxx>
+	<Approx_ParametrizationType.hxx>
+	<Standard_Integer.hxx>
+	<BRepBuilderAPI_MakeShape.hxx>
+	<TopTools_Array1OfShape.hxx>
+	<NCollection_Handle.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_sequenceofshape.hxx
+	<TopoDS_Shape.hxx>
+	<NCollection_Sequence.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_datamapofshapeinteger.hxx
+	<TopoDS_Shape.hxx>
+	<Standard_Integer.hxx>
+	<TopTools_ShapeMapHasher.hxx>
+	<NCollection_DataMap.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\approx_parametrizationtype.hxx
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\toptools_array1ofshape.hxx
+	<TopoDS_Shape.hxx>
+	<NCollection_Array1.hxx>
+
+1687949411 c:\bin\occprojects\test\wx_occ_1\include\mgeom_paraboloid.h
+	"mgeom.h"
+	"TopoDS.hxx"
+	"Geom_CartesianPoint.hxx"
+	"TColgp_Array2OfPnt.hxx"
+	"TColStd_Array1OfReal.hxx"
+	"TColStd_Array1OfInteger.hxx"
+	"Geom_BSplineSurface.hxx"
+	"TopoDS_Face.hxx"
+	"BRepBuilderAPI_MakeFace.hxx"
+	"Geom_CartesianPoint.hxx"
+	"mgeom_paraboladialog.h"
+	<list>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_cartesianpoint.hxx
+	<Standard.hxx>
+	<gp_Pnt.hxx>
+	<Geom_Point.hxx>
+	<Standard_Real.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_point.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_Geometry.hxx>
+	<Standard_Real.hxx>
+
+1687949437 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_paraboloid.cpp
+	"mgeom_paraboloid.h"
+	<cmath>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_bsplinesurface.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Precision.hxx>
+	<GeomAbs_BSplKnotDistribution.hxx>
+	<GeomAbs_Shape.hxx>
+	<Standard_Integer.hxx>
+	<TColgp_HArray2OfPnt.hxx>
+	<TColStd_HArray2OfReal.hxx>
+	<TColStd_HArray1OfReal.hxx>
+	<TColStd_HArray1OfInteger.hxx>
+	<Geom_BoundedSurface.hxx>
+	<TColgp_Array2OfPnt.hxx>
+	<TColStd_Array1OfReal.hxx>
+	<TColStd_Array1OfInteger.hxx>
+	<TColStd_Array2OfReal.hxx>
+	<TColgp_Array1OfPnt.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\tcolgp_harray2ofpnt.hxx
+	<gp_Pnt.hxx>
+	<TColgp_Array2OfPnt.hxx>
+	<NCollection_DefineHArray2.hxx>
+
+1679469026 c:\bin\msys\mingw64\include\opencascade\geom_boundedsurface.hxx
+	<Standard.hxx>
+	<Standard_Type.hxx>
+	<Geom_Surface.hxx>
+
+1687859198 source:c:\bin\occprojects\test\wx_occ_1\mgeom_paraboloiddialog.cpp
+	"MGeom_ParaboloidDialog.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1687858999 c:\bin\occprojects\test\wx_occ_1\mgeom_paraboloiddialog.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/panel.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1687866710 source:c:\bin\occprojects\test\wx_occ_1\newdialog.cpp
+	"NewDialog.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1687866707 c:\bin\occprojects\test\wx_occ_1\newdialog.h
+	<wx/button.h>
+	<wx/dialog.h>
+
+1687867507 c:\bin\occprojects\test\wx_occ_1\include\mgeom_paraboloiddialog.h
+	"wx/wx.h"
+
+1687867700 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_paraboloiddialog.cpp
+	"mgeom_paraboloiddialog.h"
+
+1687868012 source:c:\bin\occprojects\test\wx_occ_1\mgeom_paraboladialog.cpp
+	"mgeom_paraboladialog.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1687868011 c:\bin\occprojects\test\wx_occ_1\mgeom_paraboladialog.h
+	<wx/frame.h>
+
+1687950823 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_paraboladialog.cpp
+	"mgeom_paraboladialog.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1687950454 c:\bin\occprojects\test\wx_occ_1\include\mgeom_paraboladialog.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"mevent.h"
+	"mgeom_paraboloid.h"
+
+1687930684 source:c:\bin\occprojects\test\wx_occ_1\src\dialogupdateevent.cpp
+	"dialogupdateevent.h"
+
+1687929225 c:\bin\occprojects\test\wx_occ_1\include\dialogupdateevent.h
+	"wx/wx.h"
+
+1687931380 source:c:\bin\occprojects\test\wx_occ_1\src\mevent.cpp
+	"mevent.h"
+
+1687937523 c:\bin\occprojects\test\wx_occ_1\include\mevent.h
+	"wx/wx.h"
 

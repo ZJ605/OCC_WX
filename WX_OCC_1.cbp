@@ -5,6 +5,7 @@
 		<Option title="WX_OCC_1" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="include/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/WX_OCC_1" prefix_auto="1" extension_auto="1" />
@@ -125,24 +126,45 @@
 			<Add library="libuxtheme.a" />
 			<Add directory="C:/BIN/MSYS/mingw64/lib" />
 		</Linker>
+		<Unit filename="MGeom_ParaboloidDialog.h">
+			<Option virtualFolder="include/" />
+		</Unit>
 		<Unit filename="include/application.h" />
+		<Unit filename="include/dialogupdateevent.h" />
 		<Unit filename="include/drawwindow.h" />
 		<Unit filename="include/geometrymodule.h" />
 		<Unit filename="include/geometrymodulewindow.h" />
 		<Unit filename="include/mainwindow.h" />
 		<Unit filename="include/messenger.h" />
+		<Unit filename="include/mevent.h" />
+		<Unit filename="include/mgeom.h" />
+		<Unit filename="include/mgeom_lens.h" />
+		<Unit filename="include/mgeom_paraboladialog.h" />
+		<Unit filename="include/mgeom_paraboloid.h" />
 		<Unit filename="include/windoweventmanager.h" />
 		<Unit filename="include/wxinteractions2occ.h" />
 		<Unit filename="src/application.cpp" />
+		<Unit filename="src/dialogupdateevent.cpp" />
 		<Unit filename="src/drawwindow.cpp" />
 		<Unit filename="src/geometrymodule.cpp" />
 		<Unit filename="src/geometrymodulewindow.cpp" />
 		<Unit filename="src/mainwindow.cpp" />
+		<Unit filename="src/mevent.cpp" />
+		<Unit filename="src/mgeom.cpp" />
+		<Unit filename="src/mgeom_lens.cpp" />
+		<Unit filename="src/mgeom_paraboladialog.cpp" />
+		<Unit filename="src/mgeom_paraboloid.cpp" />
 		<Unit filename="src/windoweventmanager.cpp" />
+		<Unit filename="wxsmith/MGeom_ParabolaDialog.wxs" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
-				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />
+				<gui name="wxWidgets" src="src\application.cpp" main="-- None --" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/MGeom_ParaboloidDialog.wxs" src="MGeom_ParaboloidDialog.cpp" hdr="MGeom_ParaboloidDialog.h" fwddecl="0" i18n="1" name="MGeom_ParaboloidDialog" language="CPP" />
+					<wxDialog wxs="wxsmith/NewDialog.wxs" src="NewDialog.cpp" hdr="NewDialog.h" fwddecl="0" i18n="1" name="NewDialog" language="CPP" />
+					<wxFrame wxs="wxsmith/MGeom_ParabolaDialog.wxs" src="mgeom_paraboladialog.cpp" hdr="mgeom_paraboladialog.h" fwddecl="0" i18n="1" name="MGeom_ParabolaDialog" language="CPP" />
+				</resources>
 			</wxsmith>
 		</Extensions>
 	</Project>

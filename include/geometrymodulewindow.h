@@ -16,15 +16,17 @@
 #include <list>
 
 #include "wx/mdi.h"
+#include "wx/window.h"
 
 #include "messenger.h"
 #include "windoweventmanager.h"
+#include "mgeom.h"
 
 
 class GeometryModuleWindow : public wxMDIChildFrame
 {
     public:
-        GeometryModuleWindow(wxMDIParentFrame* parent);
+        GeometryModuleWindow(wxMDIParentFrame* parent, std::list<Handle(MGeom)>&);
         virtual ~GeometryModuleWindow();
 
     private:
@@ -38,6 +40,8 @@ class GeometryModuleWindow : public wxMDIChildFrame
         void onMouseMove(const wxMouseEvent&);
         void onMouseClick(const wxMouseEvent&);
         void onMouseWheel(const wxMouseEvent&);
+        void onWindowMove(const wxMoveEvent&);
+        void onWindowResize(const wxSizeEvent&);
 
     private:
         Handle(V3d_Viewer) m_viewer;
@@ -46,10 +50,13 @@ class GeometryModuleWindow : public wxMDIChildFrame
         Handle(WindowEventManager) m_eventManager;
         Handle(Aspect_Window) m_aspectwindow;
 
-        TopoDS_Shape box;
+        //TopoDS_Shape box;
 
-        std::list<TopoDS_Shape> m_shapes;
+        std::list<Handle(MGeom)> m_geometryobjects;
         //std::vector<TopoDS_Shape> m_shapes;
+    //dialog
+    private:
+        //MGeom_ParaboloidDialog m_dialog;
 };
 
 #endif // GEOMETRYMODULEWINDOW_H

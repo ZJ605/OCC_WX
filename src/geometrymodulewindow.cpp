@@ -4,14 +4,32 @@
 
 #include "BRepPrimAPI_MakeBox.hxx"
 #include "AIS_Shape.hxx"
+#include "mgeom_lens.h"
+#include "mgeom_paraboloid.h"
+
 #include <iostream>
 
-GeometryModuleWindow::GeometryModuleWindow(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, "draw"), box(BRepPrimAPI_MakeBox(10,20,30))
+
+GeometryModuleWindow::GeometryModuleWindow(wxMDIParentFrame* parent, std::list<Handle(MGeom)>& geoms) : wxMDIChildFrame(parent, wxID_ANY, "draw"), m_geometryobjects(geoms)
 {
+    wxSize siz = this->GetParent()->GetSize();
+    siz.SetWidth(siz.GetWidth()*0.8);
+    siz.SetHeight(siz.GetHeight()*0.8);
+    //this->SetSize(siz);
+    std::cout << "width "<< (int)(siz.GetWidth()) << " height "<< (int)(siz.GetHeight()) << std::endl;
+    this->SetSize(50,50,(int)(siz.GetWidth()*0.8),(int)(siz.GetHeight()*0.8));
+
     init();
+
     bindEvents();
 
-    m_shapes.push_front(box);
+    //Handle(MGeom_Lens) l = new MGeom_Lens();
+    //m_geometryobjects.push_back(l);
+
+    Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
+    if (par->calculate())
+        m_geometryobjects.push_back(par);
+
 }
 
 GeometryModuleWindow::~GeometryModuleWindow()
@@ -78,17 +96,34 @@ void GeometryModuleWindow::bindEvents()
     Bind(wxEVT_RIGHT_DOWN, &GeometryModuleWindow::onMouseClick, this);
     Bind(wxEVT_RIGHT_UP, &GeometryModuleWindow::onMouseClick, this);
     Bind(wxEVT_MOUSEWHEEL, &GeometryModuleWindow::onMouseWheel, this);
+    Bind(wxEVT_MOVE, &GeometryModuleWindow::onWindowMove, this);
+    Bind(wxEVT_SIZE, &GeometryModuleWindow::onWindowResize, this);
 }
 
 void GeometryModuleWindow::onPaint(const wxPaintEvent&)
 {
-    for (auto sh : m_shapes)
+
+    for (Handle(MGeom) sh : m_geometryobjects)
     {
-        Handle(AIS_Shape) shape = new AIS_Shape(box);
+        //sh.get()->getShape();
+        Handle(AIS_Shape) shape = new AIS_Shape(sh->getShape());
         m_context->Display(shape, false);
     }
+    m_view->FitAll();
     m_view->Redraw();
 
+}
+
+void GeometryModuleWindow::onWindowMove(const wxMoveEvent&)
+{
+    //std::cout << "move " << std::endl;
+}
+
+void GeometryModuleWindow::onWindowResize(const wxSizeEvent&)
+{
+    //std::cout << "resize " << std::endl;
+    m_view->MustBeResized();
+    m_view->Update();
 }
 
 void GeometryModuleWindow::onMouseMove(const wxMouseEvent& ev)

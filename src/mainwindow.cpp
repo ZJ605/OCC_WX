@@ -7,8 +7,9 @@ namespace MainWindowIDs {
 }
 
 MainWindow::MainWindow(const wxString& title):wxMDIParentFrame(nullptr, wxID_ANY, title),
-    m_width(1000), m_height(600)
+    m_width(1800), m_height(1000)
 {
+    //this->Maximize();
     //this->SetMinSize(wxSize(600,500));
     //this->SetMaxSize(800,600);
     //this->GetSize(&m_width, &m_height);
