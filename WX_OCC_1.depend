@@ -1653,14 +1653,14 @@
 1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\msw\mdi.h
 	"wx/frame.h"
 
-1687931513 source:c:\bin\occprojects\test\wx_occ_1\src\mainwindow.cpp
+1688031964 source:c:\bin\occprojects\test\wx_occ_1\src\mainwindow.cpp
 	"mainwindow.h"
 	"icons/t1.xpm"
 
-1686910863 c:\bin\occprojects\test\wx_occ_1\include\mainwindow.h
+1688031943 c:\bin\occprojects\test\wx_occ_1\include\mainwindow.h
 	"wx/wx.h"
 	"wx/mdi.h"
-	"drawwindow.h"
+	"geometrymodulewindow.h"
 	"BRepPrimAPI_MakeBox.hxx"
 
 1687859785 source:c:\bin\occprojects\test\wx_occ_1\src\application.cpp
@@ -3950,12 +3950,13 @@
 
 1679469026 c:\bin\msys\mingw64\include\opencascade\v3d_typeofaxe.hxx
 
-1687433965 c:\bin\occprojects\test\wx_occ_1\include\windoweventmanager.h
+1688039787 c:\bin\occprojects\test\wx_occ_1\include\windoweventmanager.h
 	"AIS_ViewController.hxx"
 	"Aspect_Window.hxx"
 	<TColgp_Array1OfPnt2d.hxx>
 	<TCollection_AsciiString.hxx>
 	"wx/wx.h"
+	"mgeom.h"
 
 1679469026 c:\bin\msys\mingw64\include\opencascade\ais_viewcontroller.hxx
 	<Aspect_WindowInputListener.hxx>
@@ -4028,7 +4029,7 @@
 1679469026 c:\bin\msys\mingw64\include\opencascade\ais_walkdelta.hxx
 	<Standard_Real.hxx>
 
-1687434184 source:c:\bin\occprojects\test\wx_occ_1\src\windoweventmanager.cpp
+1688039239 source:c:\bin\occprojects\test\wx_occ_1\src\windoweventmanager.cpp
 	"windoweventmanager.h"
 	<Aspect_Grid.hxx>
 	<AIS_AnimationCamera.hxx>
@@ -4066,7 +4067,7 @@
 	<Prs3d_Drawer.hxx>
 	<Prs3d_TypeOfHLR.hxx>
 
-1687777390 c:\bin\occprojects\test\wx_occ_1\include\geometrymodule.h
+1687951921 c:\bin\occprojects\test\wx_occ_1\include\geometrymodule.h
 	"wx/mdi.h"
 	<list>
 	"TopoDS_Shape.hxx"
@@ -4077,7 +4078,7 @@
 1687777474 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodule.cpp
 	"geometrymodule.h"
 
-1687859381 c:\bin\occprojects\test\wx_occ_1\include\geometrymodulewindow.h
+1688032409 c:\bin\occprojects\test\wx_occ_1\include\geometrymodulewindow.h
 	"Aspect_Window.hxx"
 	"AIS_InteractiveContext.hxx"
 	"V3d_Viewer.hxx"
@@ -4092,11 +4093,16 @@
 	<list>
 	"wx/mdi.h"
 	"wx/window.h"
+	"wx/treectrl.h"
+	"wx/splitter.h"
 	"messenger.h"
 	"windoweventmanager.h"
 	"mgeom.h"
+	"geometrywindow.h"
+	"geometrytreewindow.h"
+	"visualsettings.h"
 
-1687949484 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodulewindow.cpp
+1688034287 source:c:\bin\occprojects\test\wx_occ_1\src\geometrymodulewindow.cpp
 	"geometrymodulewindow.h"
 	"wxinteractions2occ.h"
 	"BRepPrimAPI_MakeBox.hxx"
@@ -5495,7 +5501,7 @@
 	<Geom_Geometry.hxx>
 	<Standard_Real.hxx>
 
-1687949437 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_paraboloid.cpp
+1687951760 source:c:\bin\occprojects\test\wx_occ_1\src\mgeom_paraboloid.cpp
 	"mgeom_paraboloid.h"
 	<cmath>
 
@@ -5589,4 +5595,89 @@
 
 1687937523 c:\bin\occprojects\test\wx_occ_1\include\mevent.h
 	"wx/wx.h"
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\treectrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/treebase.h"
+	"wx/textctrl.h"
+	"wx/generic/treectlg.h"
+	"wx/msw/treectrl.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\treebase.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/event.h"
+	"wx/dynarray.h"
+	"wx/itemid.h"
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\itemid.h
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\generic\treectlg.h
+	"wx/scrolwin.h"
+	"wx/pen.h"
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\msw\treectrl.h
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+	"wx/treebase.h"
+	"wx/hashmap.h"
+
+1688039063 c:\bin\occprojects\test\wx_occ_1\include\geometrywindow.h
+	"Aspect_Window.hxx"
+	"AIS_InteractiveContext.hxx"
+	"V3d_Viewer.hxx"
+	"V3d_View.hxx"
+	"OpenGl_GraphicDriver.hxx"
+	"Aspect_DisplayConnection.hxx"
+	"Aspect_Handle.hxx"
+	"WNT_Window.hxx"
+	"V3d_AmbientLight.hxx"
+	"V3d_DirectionalLight.hxx"
+	"TopoDS_Shape.hxx"
+	"Quantity_Color.hxx"
+	<list>
+	"wx/mdi.h"
+	"wx/window.h"
+	"wx/treectrl.h"
+	"messenger.h"
+	"windoweventmanager.h"
+	"mgeom.h"
+	"geometrywindow.h"
+	"geometrytreewindow.h"
+
+1688015007 c:\bin\occprojects\test\wx_occ_1\include\geometrytreewindow.h
+	"wx/wx.h"
+
+1688015029 source:c:\bin\occprojects\test\wx_occ_1\src\geometrytreewindow.cpp
+	"geometrytreewindow.h"
+
+1688039421 source:c:\bin\occprojects\test\wx_occ_1\src\geometrywindow.cpp
+	"geometrywindow.h"
+	"wxinteractions2occ.h"
+	"BRepPrimAPI_MakeBox.hxx"
+	"AIS_Shape.hxx"
+	"mgeom_lens.h"
+	"mgeom_paraboloid.h"
+	<iostream>
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\splitter.h
+	"wx/event.h"
+	"wx/generic/splitter.h"
+
+1671271341 c:\bin\msys\mingw64\include\wx-3.0\wx\generic\splitter.h
+	"wx/window.h"
+	"wx/containr.h"
+
+1688034416 c:\bin\occprojects\test\wx_occ_1\include\visualsettings.h
+	"wx/wx.h"
+	"Quantity_Color.hxx"
+
+1688034185 source:c:\bin\occprojects\test\wx_occ_1\src\visualsettings.cpp
+	"visualsettings.h"
 

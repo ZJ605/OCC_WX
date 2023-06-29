@@ -22,8 +22,6 @@ class GeometryModule
 
         void addGeometry(Handle(MGeom) geom);
 
-    protected:
-
     private:
 
         GeometryModuleWindow* m_window;

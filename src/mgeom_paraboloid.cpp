@@ -30,7 +30,7 @@ bool MGeom_Paraboloid::calculate()
     double countz = int((m_maxz - m_minz)/m_stepz) + 1;
     m_points = TColgp_Array2OfPnt(0,county-1,0,countz-1);
     double multiplicator = 1.0/(4.0*m_focaldistance);
-    std::cout << "county " << county << " countz " << countz << std::endl;
+    //std::cout << "county " << county << " countz " << countz << std::endl;
     for (int i = 0; i < county; i++) {
         for (int j = 0; j < countz; j++)
         {

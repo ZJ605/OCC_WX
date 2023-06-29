@@ -17,10 +17,15 @@
 
 #include "wx/mdi.h"
 #include "wx/window.h"
+#include "wx/treectrl.h"
+#include "wx/splitter.h"
 
 #include "messenger.h"
 #include "windoweventmanager.h"
 #include "mgeom.h"
+#include "geometrywindow.h"
+#include "geometrytreewindow.h"
+#include "visualsettings.h"
 
 
 class GeometryModuleWindow : public wxMDIChildFrame
@@ -30,33 +35,25 @@ class GeometryModuleWindow : public wxMDIChildFrame
         virtual ~GeometryModuleWindow();
 
     private:
-        void init();
+        void initLayout();
+
         void bindEvents();
 
-    //events
     private:
-        void onPaint(const wxPaintEvent& ev);
-
-        void onMouseMove(const wxMouseEvent&);
-        void onMouseClick(const wxMouseEvent&);
-        void onMouseWheel(const wxMouseEvent&);
-        void onWindowMove(const wxMoveEvent&);
-        void onWindowResize(const wxSizeEvent&);
-
-    private:
-        Handle(V3d_Viewer) m_viewer;
-        Handle(V3d_View) m_view;
-        Handle(AIS_InteractiveContext) m_context;
-        Handle(WindowEventManager) m_eventManager;
-        Handle(Aspect_Window) m_aspectwindow;
-
-        //TopoDS_Shape box;
-
         std::list<Handle(MGeom)> m_geometryobjects;
         //std::vector<TopoDS_Shape> m_shapes;
-    //dialog
+
     private:
-        //MGeom_ParaboloidDialog m_dialog;
+        void onMaximize(const wxMaximizeEvent&);
+
+    //layout
+    private:
+        wxSplitterWindow* m_mainsplitter;
+        wxBoxSizer* m_mainsizer;
+        GeometryWindow* m_geometryWindow;
+        GeometryTreeWindow* m_treeWindow;
+        //wxPanel* m_treePanel;
+        //wxPanel* m_geometryPanel;
 };
 
 #endif // GEOMETRYMODULEWINDOW_H

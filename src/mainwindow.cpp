@@ -2,6 +2,9 @@
 
 #include "icons/t1.xpm"
 
+int MainWindow::wxID_MMAINWINDOW = 1001;
+
+
 namespace MainWindowIDs {
     int MainToolBarT1 = 101;
 }
@@ -9,23 +12,31 @@ namespace MainWindowIDs {
 MainWindow::MainWindow(const wxString& title):wxMDIParentFrame(nullptr, wxID_ANY, title),
     m_width(1800), m_height(1000)
 {
-    //this->Maximize();
-    //this->SetMinSize(wxSize(600,500));
-    //this->SetMaxSize(800,600);
-    //this->GetSize(&m_width, &m_height);
-    //std::cout << m_width << std::endl;
-    //wxMessageBox("asdf", m_width);
     this->SetSize(300,300,m_width, m_height);
 
-    setupMainMenu();
-    setupToolbars();
+    setupLayout();
 
+    bindEvents();
     //this->m_drawwindow = new DrawWindow(this);
 }
 
 MainWindow::~MainWindow()
 {
     //dtor
+}
+
+void MainWindow::bindEvents()
+{
+
+}
+
+void MainWindow::setupLayout()
+{
+    setupMainMenu();
+    setupToolbars();
+
+    int m_clientwidth = this->GetClientSize().GetWidth();
+    int m_clientheight = this->GetClientSize().GetHeight();
 }
 
 void MainWindow::setupMainMenu(){
@@ -39,14 +50,13 @@ void MainWindow::setupMainMenu(){
     wxMenu* geommenu = new wxMenu();
     //auto geommenugeom1 = geommenu->Append(wxID_ANY, "geom1");
 
-    this->Bind(wxEVT_MENU, &MainWindow::geom1, this, geommenu->Append(wxID_ANY, "geom1")->GetId());
+    this->Bind(wxEVT_MENU, &MainWindow::geom1, this, geommenu->Append(MainWindow::wxID_MMAINWINDOW, "geom1")->GetId());
 
     wxMenuBar* menubar = new wxMenuBar();
     menubar->Append(filemenu, "File");
     menubar->Append(geommenu, "Geometry");
 
     this->SetMenuBar(menubar);
-
 }
 
 void MainWindow::setupToolbars(){
@@ -72,3 +82,6 @@ void MainWindow::tlbr1(wxCommandEvent&){
 void MainWindow::onT1(wxCommandEvent&){
     std::cout <<"t1 pressed" << std::endl;
 }
+
+
+

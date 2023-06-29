@@ -8,6 +8,8 @@
 
 #include "wx/wx.h"
 
+#include "mgeom.h"
+
 namespace {
     static Aspect_VKeyMouse wxMouseButtons2VKeys(const wxMouseEvent& ev){
         Aspect_VKeyMouse buttons = Aspect_VKeyMouse_NONE;
@@ -48,6 +50,7 @@ class WindowEventManager : public AIS_ViewController, public Standard_Transient
     public:
         //virtual bool UpdateMousePosition(const Graphic3d_Vec2i& point, Aspect_VKeyMouse buttons, Aspect_VKeyFlags modifiers, bool isEmulated) Standard_OVERRIDE;
         virtual bool UpdateMouseButtons(const Graphic3d_Vec2i& thePoint, Aspect_VKeyMouse theButtons, Aspect_VKeyFlags theModifiers, bool theIsEmulated) Standard_OVERRIDE;
+        virtual void OnSelectionChanged(const Handle(AIS_InteractiveContext) &theCtx, const Handle(V3d_View) &theView) override;
 
     private:
         Handle(V3d_View) m_view;

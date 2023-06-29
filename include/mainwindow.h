@@ -4,16 +4,21 @@
 #include "wx/wx.h"
 #include "wx/mdi.h"
 
-#include "drawwindow.h"
+#include "geometrymodulewindow.h"
 
 #include "BRepPrimAPI_MakeBox.hxx"
 
 class MainWindow : public wxMDIParentFrame
 {
+    static int wxID_MMAINWINDOW;
+
     public:
         MainWindow(const wxString& title);
         virtual ~MainWindow();
     protected:
+        void bindEvents();
+
+        void setupLayout();
         void setupMainMenu();
         void setupToolbars();
     private:
@@ -22,11 +27,16 @@ class MainWindow : public wxMDIParentFrame
 
         void onT1(wxCommandEvent&);
 
+    //events
     private:
-        //DrawWindow* m_drawwindow;
 
+
+    private:
         int m_width;
         int m_height;
+
+        int m_clientwidth;
+        int m_clientheight;
 
 };
 
