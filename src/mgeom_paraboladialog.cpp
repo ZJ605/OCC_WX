@@ -9,8 +9,8 @@
 const long MGeom_ParabolaDialog::ID_STATICTEXT1 = wxNewId();
 const long MGeom_ParabolaDialog::ID_TEXTCTRL1 = wxNewId();
 const long MGeom_ParabolaDialog::ID_PANEL2 = wxNewId();
-const long MGeom_ParabolaDialog::ID_BUTTON1 = wxNewId();
-const long MGeom_ParabolaDialog::ID_BUTTON2 = wxNewId();
+const long MGeom_ParabolaDialog::ID_APPLY = wxNewId();
+const long MGeom_ParabolaDialog::ID_CANCEL = wxNewId();
 const long MGeom_ParabolaDialog::ID_PANEL3 = wxNewId();
 const long MGeom_ParabolaDialog::ID_PANEL1 = wxNewId();
 //*)
@@ -22,12 +22,12 @@ END_EVENT_TABLE()
 
 MGeom_ParabolaDialog::MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, Handler handler, const wxPoint& pos,const wxSize& size) : m_paraboloid(owner), m_handler(handler)
 {
-	//(*Initialize(MGeom_ParabolaDialog)
+    //(*Initialize(MGeom_ParabolaDialog)
 	wxBoxSizer* BoxSizer1;
 	wxBoxSizer* BoxSizer2;
 	wxBoxSizer* BoxSizer3;
 
-	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE & ~(wxMINIMIZE_BOX | wxMAXIMIZE_BOX), _T("id"));
+	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE & ~(wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX), _T("id"));
 
 	SetClientSize(wxDefaultSize);
 	Move(wxDefaultPosition);
@@ -45,9 +45,9 @@ MGeom_ParabolaDialog::MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* o
 	BoxSizer1->Add(Panel2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	Panel3 = new wxPanel(Panel1, ID_PANEL3, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
 	BoxSizer3 = new wxBoxSizer(wxHORIZONTAL);
-	btn_apply = new wxButton(Panel3, ID_BUTTON1, _("Apply"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	btn_apply = new wxButton(Panel3, ID_APPLY, _("Apply"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	BoxSizer3->Add(btn_apply, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	btn_cancel = new wxButton(Panel3, ID_BUTTON2, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btn_cancel = new wxButton(Panel3, ID_CANCEL, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
 	BoxSizer3->Add(btn_cancel, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	Panel3->SetSizer(BoxSizer3);
 	BoxSizer3->Fit(Panel3);
@@ -57,41 +57,70 @@ MGeom_ParabolaDialog::MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* o
 	BoxSizer1->Fit(Panel1);
 	BoxSizer1->SetSizeHints(Panel1);
 
-	//Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MGeom_ParabolaDialog::OnButton1Click);
-	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MGeom_ParabolaDialog::Onbtn_cancelClick);
+	Connect(ID_APPLY,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MGeom_ParabolaDialog::Onbtn_applyClick);
+	Connect(ID_CANCEL,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&MGeom_ParabolaDialog::Onbtn_cancelClick);
 	//*)
 
-    //m_handler = &handler;
-	bindEvents();
+    bindEvents();
 }
 
 MGeom_ParabolaDialog::~MGeom_ParabolaDialog()
 {
 	//(*Destroy(MGeom_ParabolaDialog)
 	//*)
-	std::cout << "destr" << std::endl;
 }
-
 
 void MGeom_ParabolaDialog::Onbtn_cancelClick(wxCommandEvent& event)
 {
-    wxCommandEvent ev(DIALOG_UPDATE_EVENT);
-    wxPostEvent(this,ev);
+    //wxCommandEvent ev(DIALOG_UPDATE_EVENT);
+    //wxPostEvent(this,ev);
+    this->Hide();
+}
+
+void MGeom_ParabolaDialog::Onbtn_applyClick(wxCommandEvent& event)
+{
+    //wxCommandEvent ev(DIALOG_UPDATE_EVENT);
+    //wxPostEvent(this,ev);
+    //std::cout << "in "<< ln_focal->GetValue() << std::endl;
+    ln_focal->SetValue(ln_focal->GetValue());
+    //std::cout << "in "<< ln_focal->GetValue() << std::endl;
+    //std::cout << "pointer in "<< this << std::endl;
+
+    /*if (m_paraboloid && m_handler)
+        (m_paraboloid->*m_handler)(event);
+        */
+    m_paraboloid->updateDialog();
+    this->Hide();
 }
 
 void MGeom_ParabolaDialog::bindEvents()
 {
+    /*
     Bind(wxEVT_CLOSE_WINDOW, &MGeom_ParabolaDialog::onClose, this);
     Bind(DIALOG_UPDATE_EVENT, &MGeom_ParabolaDialog::updateDialog, this);
+    */
+    ln_focal->Bind(wxEVT_TEXT_ENTER, &MGeom_ParabolaDialog::onLn_focalTextChanged, this);
 }
-
+/*
 void MGeom_ParabolaDialog::updateDialog(const wxCommandEvent& e)
 {
     if (m_paraboloid && m_handler)
         (m_paraboloid->*m_handler)(e);
 }
-
+*/
 void MGeom_ParabolaDialog::onClose(const wxCloseEvent&)
 {
-    this->Hide();
+    //this->Hide();
+}
+
+void MGeom_ParabolaDialog::onLn_focalTextChanged(const wxCommandEvent& event)
+{
+    //ln_focal->SetValue(ln_focal->GetValue());
+    if (m_paraboloid && m_handler)
+        (m_paraboloid->*m_handler)(event);
+}
+
+wxString MGeom_ParabolaDialog::getFocalDistance()
+{
+    return ln_focal->GetValue();
 }

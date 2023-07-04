@@ -10,7 +10,7 @@ namespace MainWindowIDs {
 }
 
 MainWindow::MainWindow(const wxString& title):wxMDIParentFrame(nullptr, wxID_ANY, title),
-    m_width(1800), m_height(1000)
+    m_width(900), m_height(500)
 {
     this->SetSize(300,300,m_width, m_height);
 
@@ -72,15 +72,15 @@ void MainWindow::setupToolbars(){
 }
 
 void MainWindow::geom1(wxCommandEvent&){
-    std::cout <<"gwom1" << std::endl;
+    //std::cout <<"gwom1" << std::endl;
 }
 
 void MainWindow::tlbr1(wxCommandEvent&){
-    std::cout <<"tlbr1" << std::endl;
+    //std::cout <<"tlbr1" << std::endl;
 }
 
 void MainWindow::onT1(wxCommandEvent&){
-    std::cout <<"t1 pressed" << std::endl;
+    //std::cout <<"t1 pressed" << std::endl;
 }
 
 

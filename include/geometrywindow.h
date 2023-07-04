@@ -25,12 +25,20 @@
 #include "mgeom.h"
 #include "geometrywindow.h"
 #include "geometrytreewindow.h"
+#include "mais_shape.h"
 
-class GeometryWindow : public wxPanel
+class GeometryModuleWindow;
+class WindowEventManager;
+
+class GeometryWindow : public wxPanel, public Standard_Transient
 {
+    DEFINE_STANDARD_RTTI_INLINE(GeometryWindow, Standard_Transient)
+
     public:
-        GeometryWindow(wxWindow* parent, std::list<Handle(MGeom)>&);
+        GeometryWindow(wxWindow* parent, GeometryModuleWindow* win, std::list<Handle(MGeom)>&);
         virtual ~GeometryWindow();
+
+        void setGeometryModuleWindow(GeometryModuleWindow*);
 
     public:
         void addGeometry(Handle(MGeom));
@@ -55,9 +63,15 @@ class GeometryWindow : public wxPanel
         void onWindowMove(const wxMoveEvent&);
         void onWindowResize(const wxSizeEvent&);
 
+        void onSelectGeometry(); //selected geometry from geometrywindow
 
     private:
         std::list<Handle(MGeom)> m_geometryobjects;
+
+        TopAbs_ShapeEnum m_selectionmode; //
+
+        GeometryModuleWindow* m_geometrymodulewindow;
+        //std::shared_ptr<GeometryModuleWindow> m_geometrymodulewindow;
 };
 
 #endif // GEOMETRYWINDOW_H

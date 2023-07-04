@@ -7,7 +7,7 @@ MGeom_Paraboloid::MGeom_Paraboloid(wxWindow* parent): m_degu(3), m_degv(3), m_fo
 
 {
     initDialog(parent);
-    showDialog();
+    //showDialog();
 }
 
 MGeom_Paraboloid::~MGeom_Paraboloid()
@@ -17,15 +17,18 @@ MGeom_Paraboloid::~MGeom_Paraboloid()
 
 TopoDS_Shape MGeom_Paraboloid::getShape()
 {
-    //TopoDS_Shape s;
-    //return s;
 
-    //return m_face;
     return BRepBuilderAPI_MakeFace(m_surf, 0.01).Face();
+}
+
+char* MGeom_Paraboloid::getMgeomType()
+{
+    return "MGeom_Paraboloid";
 }
 
 bool MGeom_Paraboloid::calculate()
 {
+    //std::cout << "focal " << m_focaldistance << std::endl;
     double county = int((m_maxy - m_miny)/m_stepy) + 1;
     double countz = int((m_maxz - m_minz)/m_stepz) + 1;
     m_points = TColgp_Array2OfPnt(0,county-1,0,countz-1);
@@ -89,11 +92,34 @@ void MGeom_Paraboloid::showDialog()
 
 void MGeom_Paraboloid::onUpdateDialog(const wxCommandEvent& ev)
 {
-    std::cout << "updated in " << std::endl;
+    //std::cout << "updated in " << std::endl;
+    double num = 0;
+    if (MParser::text2doubleNumber(m_dialog->ln_focal->GetLabel().ToStdString(),num))
+    {
+        std::cout << "num " << num <<std::endl;
+        setFocalDistance(num);
+        calculate();
+    }
+    else
+        std::cout << "not num " << m_dialog->ln_focal->GetValue() <<std::endl;
+}
+
+void MGeom_Paraboloid::updateDialog()
+{
+    double num = 0;
+    if (MParser::text2doubleNumber(m_dialog->getFocalDistance().ToStdString(),num))
+    {
+        //std::cout << "num " << num <<std::endl;
+        setFocalDistance(num);
+        calculate();
+    }
+    else
+        std::cout << "not num " << m_dialog->getFocalDistance() <<std::endl;
+
 }
 
 void MGeom_Paraboloid::initDialog(wxWindow* parent)
 {
     m_dialog = new MGeom_ParabolaDialog(parent, this, &MGeom_Paraboloid::onUpdateDialog);
-    showDialog();
+    //showDialog();
 }

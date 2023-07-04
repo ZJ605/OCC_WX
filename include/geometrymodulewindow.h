@@ -27,12 +27,18 @@
 #include "geometrytreewindow.h"
 #include "visualsettings.h"
 
+class GeometryWindow;
 
-class GeometryModuleWindow : public wxMDIChildFrame
+class GeometryModuleWindow : public wxMDIChildFrame, public Standard_Transient
 {
+
+    DEFINE_STANDARD_RTTI_INLINE(GeometryModuleWindow, Standard_Transient)
+
     public:
         GeometryModuleWindow(wxMDIParentFrame* parent, std::list<Handle(MGeom)>&);
         virtual ~GeometryModuleWindow();
+
+        void onSelectGeometry(Handle(MGeom));
 
     private:
         void initLayout();
@@ -41,19 +47,22 @@ class GeometryModuleWindow : public wxMDIChildFrame
 
     private:
         std::list<Handle(MGeom)> m_geometryobjects;
+        bool nic;
         //std::vector<TopoDS_Shape> m_shapes;
 
     private:
         void onMaximize(const wxMaximizeEvent&);
+
 
     //layout
     private:
         wxSplitterWindow* m_mainsplitter;
         wxBoxSizer* m_mainsizer;
         GeometryWindow* m_geometryWindow;
+        //std::shared_ptr<GeometryWindow> m_geometryWindow;
         GeometryTreeWindow* m_treeWindow;
-        //wxPanel* m_treePanel;
-        //wxPanel* m_geometryPanel;
+        //std::shared_ptr<GeometryTreeWindow> m_treeWindow;
+
 };
 
 #endif // GEOMETRYMODULEWINDOW_H

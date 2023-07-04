@@ -9,10 +9,12 @@
 
 #include <iostream>
 
-GeometryWindow::GeometryWindow(wxWindow* parent, std::list<Handle(MGeom)>& geoms) : wxPanel(parent, wxID_ANY), m_geometryobjects(geoms)
+GeometryWindow::GeometryWindow(wxWindow* parent, GeometryModuleWindow* win, std::list<Handle(MGeom)>& geoms) : wxPanel(parent, wxID_ANY), m_geometryobjects(geoms), m_geometrymodulewindow(win)
 {
     init();
     bindEvents();
+
+    m_geometrymodulewindow = win;
 
     Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
     if (par->calculate())
@@ -31,9 +33,7 @@ GeometryWindow::~GeometryWindow()
 
 void GeometryWindow::init()
 {
-    std::cout << "asdf" << std::endl;
-
- 	Handle(Aspect_DisplayConnection) displayconnection = new Aspect_DisplayConnection();
+    Handle(Aspect_DisplayConnection) displayconnection = new Aspect_DisplayConnection();
 	Handle(OpenGl_GraphicDriver) driver = new OpenGl_GraphicDriver(displayconnection);
 
 	//HWND win = this->GetHWND();
@@ -44,7 +44,10 @@ void GeometryWindow::init()
 	m_view = m_viewer->CreateView();
 	m_view->SetWindow(winhandle);
 	if (!winhandle->IsMapped()) winhandle->Map();
+
 	m_context = new AIS_InteractiveContext(m_viewer);
+    m_selectionmode = TopAbs_FACE;
+
 	m_viewer->SetDefaultLights();
 	m_viewer->SetLightOn();
     Handle(V3d_DirectionalLight) LightDir = new V3d_DirectionalLight(V3d_Zneg, Quantity_Color (Quantity_NOC_GRAY97), 1);
@@ -61,9 +64,8 @@ void GeometryWindow::init()
 
 	m_context->SetDisplayMode(AIS_Shaded, Standard_True);
     //m_context->SetSelectionModeActive();
-	m_eventManager = new WindowEventManager(m_view, m_context);
+	m_eventManager = new WindowEventManager(m_view, m_context, this->m_geometrymodulewindow);
     //std::cout << (int)win << std::endl;
-
 
     //m_context->ActivateStandardMode(TopAbs_Shape);
 }
@@ -84,17 +86,25 @@ void GeometryWindow::bindEvents()
     Bind(wxEVT_SIZE, &GeometryWindow::onWindowResize, this);
 }
 
+void GeometryWindow::setGeometryModuleWindow(GeometryModuleWindow* win)
+{
+    this->m_geometrymodulewindow = win;
+    //this->m_geometrymodulewindow = win
+}
 void GeometryWindow::onPaint(const wxPaintEvent&)
 {
 
+    //m_context->Activate(m_selectionmode);
+    m_context->Activate(m_selectionmode, Standard_True);
+
     for (Handle(MGeom) sh : m_geometryobjects)
     {
-        Handle(AIS_Shape) shape = new AIS_Shape(sh->getShape());
-        m_context->Display(shape, 0x0001,AIS_SelectionModesConcurrency_Multiple,true, PrsMgr_DisplayStatus_Displayed);
+        //Handle(AIS_Shape) shape = new AIS_Shape(sh->getShape());
+        Handle(MAIS_Shape) shape = new MAIS_Shape(sh);
+        m_context->Display(shape, 0x0001,AIS_SelectionModesConcurrency_Single,true, PrsMgr_DisplayStatus_Displayed);
     }
     m_view->FitAll();
     m_view->Redraw();
-
 
 }
 
@@ -125,6 +135,11 @@ void GeometryWindow::onMouseMove(const wxMouseEvent& ev)
 
 void GeometryWindow::onMouseClick(const wxMouseEvent& ev)
 {
+    if (ev.LeftDClick())
+    {
+        m_eventManager->onLeftMouseDClick();
+
+    }
     int posx = 0;
     int posy = 0;
     ev.GetPosition(&posx,&posy);

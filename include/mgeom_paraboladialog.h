@@ -25,6 +25,8 @@ class MGeom_ParabolaDialog: public wxFrame
 		MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, Handler handler, const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
 		virtual ~MGeom_ParabolaDialog();
 
+		wxString getFocalDistance();
+
 		//(*Declarations(MGeom_ParabolaDialog)
 		wxButton* btn_apply;
 		wxButton* btn_cancel;
@@ -41,8 +43,8 @@ class MGeom_ParabolaDialog: public wxFrame
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;
 		static const long ID_PANEL2;
-		static const long ID_BUTTON1;
-		static const long ID_BUTTON2;
+		static const long ID_APPLY;
+		static const long ID_CANCEL;
 		static const long ID_PANEL3;
 		static const long ID_PANEL1;
 		//*)
@@ -50,12 +52,15 @@ class MGeom_ParabolaDialog: public wxFrame
 	private:
 
 		//(*Handlers(MGeom_ParabolaDialog)
+        void Onbtn_applyClick(wxCommandEvent& event);
 		void Onbtn_cancelClick(wxCommandEvent& event);
+
+		void onLn_focalTextChanged(const wxCommandEvent& ev);
 		//*)
 
 		void onClose(const wxCloseEvent&);
         void bindEvents();
-        void updateDialog(const wxCommandEvent&);
+        //void updateDialog(const wxCommandEvent&);
 
         //void Close() override;
 

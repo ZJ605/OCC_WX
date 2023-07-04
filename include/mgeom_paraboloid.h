@@ -15,21 +15,27 @@
 
 #include <list>
 
+#include "mparser.h"
+
 class MGeom_ParabolaDialog;
 
 //approximated paraboloid from points according equation
 class MGeom_Paraboloid : public MGeom
 {
+    DEFINE_STANDARD_RTTI_INLINE(MGeom_Paraboloid, MGeom)
+
     public:
         MGeom_Paraboloid(wxWindow* parent);
         virtual ~MGeom_Paraboloid();
 
         virtual TopoDS_Shape getShape() Standard_OVERRIDE;
         virtual bool calculate() Standard_OVERRIDE;
+        virtual char* getMgeomType() Standard_OVERRIDE;
 
         void initDialog(wxWindow* parent);
-        void showDialog();
+        virtual void showDialog() override;
         void onUpdateDialog(const wxCommandEvent&);
+        void updateDialog();
 
     //getters and setters
     public:
@@ -78,7 +84,6 @@ class MGeom_Paraboloid : public MGeom
         TopoDS_Face m_face;
 
         MGeom_ParabolaDialog *m_dialog;
-
 
 };
 
