@@ -19,11 +19,12 @@ GeometryWindow::GeometryWindow(wxWindow* parent, GeometryModuleWindow* win, std:
     Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
     if (par->calculate())
         addGeometry(par);
-
+    /*
     Handle(MGeom_Paraboloid) par2 = new MGeom_Paraboloid(this);
     par2->setFocalDistance(40);
     if (par2->calculate())
         addGeometry(par2);
+    */
 }
 
 GeometryWindow::~GeometryWindow()
@@ -66,7 +67,6 @@ void GeometryWindow::init()
     //m_context->SetSelectionModeActive();
 	m_eventManager = new WindowEventManager(m_view, m_context, this->m_geometrymodulewindow);
     //std::cout << (int)win << std::endl;
-
     //m_context->ActivateStandardMode(TopAbs_Shape);
 }
 
@@ -93,7 +93,7 @@ void GeometryWindow::setGeometryModuleWindow(GeometryModuleWindow* win)
 }
 void GeometryWindow::onPaint(const wxPaintEvent&)
 {
-
+    m_context->RemoveAll(true);
     //m_context->Activate(m_selectionmode);
     m_context->Activate(m_selectionmode, Standard_True);
 
@@ -102,10 +102,11 @@ void GeometryWindow::onPaint(const wxPaintEvent&)
         //Handle(AIS_Shape) shape = new AIS_Shape(sh->getShape());
         Handle(MAIS_Shape) shape = new MAIS_Shape(sh);
         m_context->Display(shape, 0x0001,AIS_SelectionModesConcurrency_Single,true, PrsMgr_DisplayStatus_Displayed);
+        //std::cout << "2 " << std::endl;
     }
-    m_view->FitAll();
+    //m_view->FitAll();
     m_view->Redraw();
-
+    //std::cout << "3" << std::endl;
 }
 
 void GeometryWindow::onWindowMove(const wxMoveEvent&)
@@ -191,6 +192,17 @@ void GeometryWindow::onMouseWheel(const wxMouseEvent& ev)
 void GeometryWindow::addGeometry(Handle(MGeom) g)
 {
     m_geometryobjects.push_back(g);
+    onUpdateGeometry();
 }
 
+void GeometryWindow::onUpdateGeometry()
+{
+    wxPaintEvent ev;
+    onPaint(ev);
+}
 
+void GeometryWindow::createParaboloid()
+{
+    Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
+    par->showDialog();
+}

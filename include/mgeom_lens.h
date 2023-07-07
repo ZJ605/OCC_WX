@@ -33,7 +33,7 @@ class MGeom_Lens : public MGeom
     DEFINE_STANDARD_RTTI_INLINE(MGeom_Lens, MGeom)
 
     public:
-        MGeom_Lens();
+        MGeom_Lens(GeometryWindow* parent);
         virtual ~MGeom_Lens();
 
         virtual TopoDS_Shape getShape() Standard_OVERRIDE;

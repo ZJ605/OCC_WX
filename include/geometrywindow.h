@@ -29,6 +29,7 @@
 
 class GeometryModuleWindow;
 class WindowEventManager;
+class GeometryEventManager;
 
 class GeometryWindow : public wxPanel, public Standard_Transient
 {
@@ -43,6 +44,8 @@ class GeometryWindow : public wxPanel, public Standard_Transient
     public:
         void addGeometry(Handle(MGeom));
 
+        void onUpdateGeometry();
+
     private:
         void bindEvents();
         void init(); //initialize AIS window and connects it to wxwindow m_goemetrypanel
@@ -53,7 +56,6 @@ class GeometryWindow : public wxPanel, public Standard_Transient
         Handle(AIS_InteractiveContext) m_context;
         Handle(WindowEventManager) m_eventManager;
         Handle(Aspect_Window) m_aspectwindow;
-
     //events
     private:
         void onPaint(const wxPaintEvent& ev);
@@ -65,12 +67,17 @@ class GeometryWindow : public wxPanel, public Standard_Transient
 
         void onSelectGeometry(); //selected geometry from geometrywindow
 
+    //create geometry
+    private:
+        void createParaboloid();
+
     private:
         std::list<Handle(MGeom)> m_geometryobjects;
 
         TopAbs_ShapeEnum m_selectionmode; //
 
         GeometryModuleWindow* m_geometrymodulewindow;
+        //Handle(GeometryModuleWindow) m_geometrymodulewindow;
         //std::shared_ptr<GeometryModuleWindow> m_geometrymodulewindow;
 };
 

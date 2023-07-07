@@ -17,12 +17,9 @@ class MGeom_Paraboloid;
 
 class MGeom_ParabolaDialog: public wxFrame
 {
-    public:
-        typedef void (MGeom_Paraboloid::*Handler)(const wxCommandEvent&);
+ 	public:
 
-	public:
-
-		MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, Handler handler, const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
+		MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
 		virtual ~MGeom_ParabolaDialog();
 
 		wxString getFocalDistance();
@@ -55,10 +52,13 @@ class MGeom_ParabolaDialog: public wxFrame
         void Onbtn_applyClick(wxCommandEvent& event);
 		void Onbtn_cancelClick(wxCommandEvent& event);
 
-		void onLn_focalTextChanged(const wxCommandEvent& ev);
+		void onLn_focalTextChanged(wxCommandEvent& ev);
+		void onLn_focalEnterDown(  wxEvent& ev);
 		//*)
 
 		void onClose(const wxCloseEvent&);
+		void onEnterDown( wxKeyEvent&);
+
         void bindEvents();
         //void updateDialog(const wxCommandEvent&);
 
@@ -69,7 +69,6 @@ class MGeom_ParabolaDialog: public wxFrame
 		//event handler from mgeom_paraboloid
 
 		MGeom_Paraboloid* m_paraboloid;
-		Handler m_handler;
 };
 
 #endif

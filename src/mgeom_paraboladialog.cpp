@@ -20,7 +20,7 @@ BEGIN_EVENT_TABLE(MGeom_ParabolaDialog,wxFrame)
 	//*)
 END_EVENT_TABLE()
 
-MGeom_ParabolaDialog::MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, Handler handler, const wxPoint& pos,const wxSize& size) : m_paraboloid(owner), m_handler(handler)
+MGeom_ParabolaDialog::MGeom_ParabolaDialog(wxWindow* parent, MGeom_Paraboloid* owner, const wxPoint& pos,const wxSize& size) : m_paraboloid(owner)
 {
     //(*Initialize(MGeom_ParabolaDialog)
 	wxBoxSizer* BoxSizer1;
@@ -70,6 +70,16 @@ MGeom_ParabolaDialog::~MGeom_ParabolaDialog()
 	//*)
 }
 
+void MGeom_ParabolaDialog::bindEvents()
+{
+
+    ln_focal->Bind(wxEVT_TEXT_ENTER, &MGeom_ParabolaDialog::onLn_focalTextChanged, this);
+    ln_focal->Bind(wxTE_PROCESS_ENTER, &MGeom_ParabolaDialog::onLn_focalEnterDown, this);
+    //ln_focal->Bind(wxEVT_KEY_DOWN, &MGeom_ParabolaDialog::onLn_focalKeyDown, this);
+    Bind(wxEVT_KEY_DOWN, &MGeom_ParabolaDialog::onEnterDown, this);
+
+}
+
 void MGeom_ParabolaDialog::Onbtn_cancelClick(wxCommandEvent& event)
 {
     //wxCommandEvent ev(DIALOG_UPDATE_EVENT);
@@ -79,47 +89,37 @@ void MGeom_ParabolaDialog::Onbtn_cancelClick(wxCommandEvent& event)
 
 void MGeom_ParabolaDialog::Onbtn_applyClick(wxCommandEvent& event)
 {
-    //wxCommandEvent ev(DIALOG_UPDATE_EVENT);
-    //wxPostEvent(this,ev);
-    //std::cout << "in "<< ln_focal->GetValue() << std::endl;
-    ln_focal->SetValue(ln_focal->GetValue());
-    //std::cout << "in "<< ln_focal->GetValue() << std::endl;
-    //std::cout << "pointer in "<< this << std::endl;
-
-    /*if (m_paraboloid && m_handler)
-        (m_paraboloid->*m_handler)(event);
-        */
     m_paraboloid->updateDialog();
     this->Hide();
 }
 
-void MGeom_ParabolaDialog::bindEvents()
-{
-    /*
-    Bind(wxEVT_CLOSE_WINDOW, &MGeom_ParabolaDialog::onClose, this);
-    Bind(DIALOG_UPDATE_EVENT, &MGeom_ParabolaDialog::updateDialog, this);
-    */
-    ln_focal->Bind(wxEVT_TEXT_ENTER, &MGeom_ParabolaDialog::onLn_focalTextChanged, this);
-}
-/*
-void MGeom_ParabolaDialog::updateDialog(const wxCommandEvent& e)
-{
-    if (m_paraboloid && m_handler)
-        (m_paraboloid->*m_handler)(e);
-}
-*/
 void MGeom_ParabolaDialog::onClose(const wxCloseEvent&)
 {
     //this->Hide();
 }
 
-void MGeom_ParabolaDialog::onLn_focalTextChanged(const wxCommandEvent& event)
+void MGeom_ParabolaDialog::onLn_focalTextChanged(wxCommandEvent& event)
 {
-    //ln_focal->SetValue(ln_focal->GetValue());
-    if (m_paraboloid && m_handler)
-        (m_paraboloid->*m_handler)(event);
+    std::cout << "text changed " << std::endl;
+    if (m_paraboloid)
+        m_paraboloid->onUpdateDialog();
+    this->Hide();
 }
 
+void MGeom_ParabolaDialog::onLn_focalEnterDown(  wxEvent& event)
+{
+    std::cout << " focal enter " << std::endl;
+    wxCommandEvent ev;
+    Onbtn_applyClick(ev);
+
+}
+
+void MGeom_ParabolaDialog::onEnterDown( wxKeyEvent& event)
+{
+    std::cout << "enter  down" << std::endl;
+    if (m_paraboloid)
+        m_paraboloid->onUpdateDialog();
+}
 wxString MGeom_ParabolaDialog::getFocalDistance()
 {
     return ln_focal->GetValue();

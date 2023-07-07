@@ -25,16 +25,17 @@ class MGeom_Paraboloid : public MGeom
     DEFINE_STANDARD_RTTI_INLINE(MGeom_Paraboloid, MGeom)
 
     public:
-        MGeom_Paraboloid(wxWindow* parent);
+        MGeom_Paraboloid(GeometryWindow* parent);
         virtual ~MGeom_Paraboloid();
 
         virtual TopoDS_Shape getShape() Standard_OVERRIDE;
         virtual bool calculate() Standard_OVERRIDE;
         virtual char* getMgeomType() Standard_OVERRIDE;
 
-        void initDialog(wxWindow* parent);
+        void initDialog(GeometryWindow* parent);
         virtual void showDialog() override;
-        void onUpdateDialog(const wxCommandEvent&);
+        void onUpdateDialog();
+
         void updateDialog();
 
     //getters and setters

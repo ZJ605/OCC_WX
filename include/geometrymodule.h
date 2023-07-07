@@ -18,9 +18,15 @@ class GeometryModule
         virtual ~GeometryModule();
 
         void createWindow(wxMDIParentFrame* parent);
-        //wxMDIChildFrame* getWindow();
 
         void addGeometry(Handle(MGeom) geom);
+
+    private:
+        void createToolbars(wxMDIParentFrame* parent);
+
+    //creating geometry
+    private:
+        void createParaboloid(wxCommandEvent&);
 
     private:
 

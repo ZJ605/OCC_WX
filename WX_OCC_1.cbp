@@ -141,7 +141,6 @@
 		<Unit filename="include/messenger.h" />
 		<Unit filename="include/mevent.h" />
 		<Unit filename="include/mgeom.h" />
-		<Unit filename="include/mgeom_lens.h" />
 		<Unit filename="include/mgeom_paraboladialog.h" />
 		<Unit filename="include/mgeom_paraboloid.h" />
 		<Unit filename="include/mparser.h" />
@@ -159,7 +158,6 @@
 		<Unit filename="src/mais_shape.cpp" />
 		<Unit filename="src/mevent.cpp" />
 		<Unit filename="src/mgeom.cpp" />
-		<Unit filename="src/mgeom_lens.cpp" />
 		<Unit filename="src/mgeom_paraboladialog.cpp" />
 		<Unit filename="src/mgeom_paraboloid.cpp" />
 		<Unit filename="src/mparser.cpp" />

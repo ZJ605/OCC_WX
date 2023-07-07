@@ -64,6 +64,7 @@ class WindowEventManager : public AIS_ViewController, public Standard_Transient
     private:
         Handle(V3d_View) m_view;
         Handle(AIS_InteractiveContext) m_context;
+        //Handle(GeometryModuleWindow) m_geometrymodulewindow;
         GeometryModuleWindow* m_geometrymodulewindow;
 
     private:

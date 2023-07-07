@@ -56,12 +56,16 @@ void GeometryModuleWindow::onMaximize(const wxMaximizeEvent& ev)
 
 void GeometryModuleWindow::onSelectGeometry(Handle(MGeom) geom)
 {
-    //std::cout << "selected geom name: " << geom->getID() << " name: " << geom->getMgeomType() << std::endl;
     geom->showDialog();
-    /*
-    for (std::list<Handle(MGeom)>::iterator it = m_geometryobjects.begin(); it != m_geometryobjects.end(); ++it)
-    {
 
-    }
-    */
+}
+
+void GeometryModuleWindow::onUpdateGeometry()
+{
+    //std::cout << "max" << std::endl;
+}
+
+void GeometryModuleWindow::createParaboloid()
+{
+    m_geometryWindow->createParaboloid();
 }

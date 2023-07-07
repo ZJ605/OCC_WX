@@ -1,7 +1,7 @@
 #include "mgeom_lens.h"
 
 
-MGeom_Lens::MGeom_Lens()//: box(50,60,70)
+MGeom_Lens::MGeom_Lens(GeometryWindow* parent) : m_geomwindow(parent)//: box(50,60,70)
 {
     this->create();
 }

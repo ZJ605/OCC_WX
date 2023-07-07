@@ -4,7 +4,9 @@
 #include "Geom_Line.hxx"
 #include "TopoDS.hxx"
 
+//#include "geometrywindow.h"
 
+class GeometryWindow;
 
 class MGeom : public Standard_Transient
 {
@@ -13,7 +15,7 @@ class MGeom : public Standard_Transient
     static int mgeom_id;
 
     public:
-        MGeom();
+        MGeom(GeometryWindow* parent);
         virtual ~MGeom();
 
         virtual TopoDS_Shape getShape() = 0;
@@ -22,8 +24,15 @@ class MGeom : public Standard_Transient
         virtual void showDialog() = 0;
         int getID(){return m_ID;}
 
+    protected:
+        GeometryWindow* m_geomwindow;
+
     private:
         int m_ID;
+
+
+
+
 };
 
 #endif // MGEOM_H

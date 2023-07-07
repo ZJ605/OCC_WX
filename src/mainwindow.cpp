@@ -46,16 +46,16 @@ void MainWindow::setupMainMenu(){
     auto filemenuopen = filemenu->Append(wxID_OPEN);
     auto filemenusave = filemenu->Append(wxID_SAVE);
     auto filemenusaveas = filemenu->Append(wxID_SAVEAS);
-
+    /*
     wxMenu* geommenu = new wxMenu();
     //auto geommenugeom1 = geommenu->Append(wxID_ANY, "geom1");
 
     this->Bind(wxEVT_MENU, &MainWindow::geom1, this, geommenu->Append(MainWindow::wxID_MMAINWINDOW, "geom1")->GetId());
 
+    menubar->Append(geommenu, "Geometry");
+    */
     wxMenuBar* menubar = new wxMenuBar();
     menubar->Append(filemenu, "File");
-    menubar->Append(geommenu, "Geometry");
-
     this->SetMenuBar(menubar);
 }
 

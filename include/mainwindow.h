@@ -10,7 +10,8 @@
 
 class MainWindow : public wxMDIParentFrame
 {
-    static int wxID_MMAINWINDOW;
+    public:
+        static int wxID_MMAINWINDOW;
 
     public:
         MainWindow(const wxString& title);

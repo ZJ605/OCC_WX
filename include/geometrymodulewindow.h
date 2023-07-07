@@ -31,19 +31,26 @@ class GeometryWindow;
 
 class GeometryModuleWindow : public wxMDIChildFrame, public Standard_Transient
 {
-
     DEFINE_STANDARD_RTTI_INLINE(GeometryModuleWindow, Standard_Transient)
 
     public:
         GeometryModuleWindow(wxMDIParentFrame* parent, std::list<Handle(MGeom)>&);
         virtual ~GeometryModuleWindow();
 
+        getToolbars();
+
         void onSelectGeometry(Handle(MGeom));
+        void onUpdateGeometry();
+
 
     private:
         void initLayout();
 
         void bindEvents();
+
+    //creating geometry
+    private:
+        void createParaboloid();
 
     private:
         std::list<Handle(MGeom)> m_geometryobjects;
