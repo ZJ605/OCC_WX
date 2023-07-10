@@ -36,8 +36,6 @@ class MGeom_Paraboloid : public MGeom
         virtual void showDialog() override;
         void onUpdateDialog();
 
-        void updateDialog();
-
     //getters and setters
     public:
         int getDegU(){return m_degu;}
@@ -72,7 +70,6 @@ class MGeom_Paraboloid : public MGeom
         double m_stepy;
         double m_stepz;
         Geom_CartesianPoint m_vertex;
-        //std::list<Geom_CartesianPoint>
         TColgp_Array2OfPnt m_points;
 
         //not accessible properties
@@ -85,6 +82,8 @@ class MGeom_Paraboloid : public MGeom
         TopoDS_Face m_face;
 
         MGeom_ParabolaDialog *m_dialog;
+
+        bool m_added2model;
 
 };
 

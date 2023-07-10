@@ -37,11 +37,8 @@ class GeometryModuleWindow : public wxMDIChildFrame, public Standard_Transient
         GeometryModuleWindow(wxMDIParentFrame* parent, std::list<Handle(MGeom)>&);
         virtual ~GeometryModuleWindow();
 
-        getToolbars();
-
         void onSelectGeometry(Handle(MGeom));
         void onUpdateGeometry();
-
 
     private:
         void initLayout();
@@ -49,7 +46,7 @@ class GeometryModuleWindow : public wxMDIChildFrame, public Standard_Transient
         void bindEvents();
 
     //creating geometry
-    private:
+    public:
         void createParaboloid();
 
     private:

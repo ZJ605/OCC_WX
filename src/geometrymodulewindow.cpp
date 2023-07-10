@@ -51,7 +51,7 @@ void GeometryModuleWindow::bindEvents()
 
 void GeometryModuleWindow::onMaximize(const wxMaximizeEvent& ev)
 {
-    //std::cout << "max" << std::endl;
+
 }
 
 void GeometryModuleWindow::onSelectGeometry(Handle(MGeom) geom)
@@ -62,7 +62,7 @@ void GeometryModuleWindow::onSelectGeometry(Handle(MGeom) geom)
 
 void GeometryModuleWindow::onUpdateGeometry()
 {
-    //std::cout << "max" << std::endl;
+
 }
 
 void GeometryModuleWindow::createParaboloid()

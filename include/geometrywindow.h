@@ -68,7 +68,7 @@ class GeometryWindow : public wxPanel, public Standard_Transient
         void onSelectGeometry(); //selected geometry from geometrywindow
 
     //create geometry
-    private:
+    public:
         void createParaboloid();
 
     private:
@@ -77,8 +77,6 @@ class GeometryWindow : public wxPanel, public Standard_Transient
         TopAbs_ShapeEnum m_selectionmode; //
 
         GeometryModuleWindow* m_geometrymodulewindow;
-        //Handle(GeometryModuleWindow) m_geometrymodulewindow;
-        //std::shared_ptr<GeometryModuleWindow> m_geometrymodulewindow;
 };
 
 #endif // GEOMETRYWINDOW_H

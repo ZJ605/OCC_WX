@@ -20,11 +20,7 @@ bool Application::OnInit(){
 	//*)
 	//return wxsOK;
 
-    m_geommod = new GeometryModule();
-    m_geommod->createWindow(this->m_mainwin);
-
-
-    //m_mainwin->AddMDIChild(m_geommod->getWindow());
+    m_geommod = new GeometryModule(this->m_mainwin);
     return m_mainwin->Show();
 }
 

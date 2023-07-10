@@ -16,9 +16,11 @@ GeometryWindow::GeometryWindow(wxWindow* parent, GeometryModuleWindow* win, std:
 
     m_geometrymodulewindow = win;
 
+    /*
     Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
     if (par->calculate())
         addGeometry(par);
+    */
     /*
     Handle(MGeom_Paraboloid) par2 = new MGeom_Paraboloid(this);
     par2->setFocalDistance(40);
@@ -94,19 +96,15 @@ void GeometryWindow::setGeometryModuleWindow(GeometryModuleWindow* win)
 void GeometryWindow::onPaint(const wxPaintEvent&)
 {
     m_context->RemoveAll(true);
-    //m_context->Activate(m_selectionmode);
     m_context->Activate(m_selectionmode, Standard_True);
 
     for (Handle(MGeom) sh : m_geometryobjects)
     {
-        //Handle(AIS_Shape) shape = new AIS_Shape(sh->getShape());
         Handle(MAIS_Shape) shape = new MAIS_Shape(sh);
         m_context->Display(shape, 0x0001,AIS_SelectionModesConcurrency_Single,true, PrsMgr_DisplayStatus_Displayed);
-        //std::cout << "2 " << std::endl;
+
     }
-    //m_view->FitAll();
     m_view->Redraw();
-    //std::cout << "3" << std::endl;
 }
 
 void GeometryWindow::onWindowMove(const wxMoveEvent&)
@@ -115,10 +113,8 @@ void GeometryWindow::onWindowMove(const wxMoveEvent&)
 
 void GeometryWindow::onWindowResize(const wxSizeEvent&)
 {
-    //std::cout << "resize " << std::endl;
     m_view->MustBeResized();
     m_view->Update();
-    //m_treePanel->SetSize(200,);
 }
 
 void GeometryWindow::onMouseMove(const wxMouseEvent& ev)
@@ -157,8 +153,6 @@ void GeometryWindow::onMouseClick(const wxMouseEvent& ev)
 
     if ( ev.LeftDown() || ev.MiddleDown() || ev.RightDown() )
     {
-
-        //SetFocus((HWND)this->GetHWND());
         //SetCapture(this->GetHWND());
         if (!m_eventManager.IsNull())
             m_eventManager->PressMouseButton(pos, button, flags, false);
@@ -174,8 +168,6 @@ void GeometryWindow::onMouseClick(const wxMouseEvent& ev)
 }
 void GeometryWindow::onMouseWheel(const wxMouseEvent& ev)
 {
-       //std::cout << "g" <<std::endl;
-
     const double delta = double(ev.GetWheelRotation())/(double)ev.GetWheelDelta();
     const Aspect_VKeyFlags flags = ::wxMouseKeyFlags2VKeyFlags(ev);
     int posx = 0;
@@ -203,6 +195,7 @@ void GeometryWindow::onUpdateGeometry()
 
 void GeometryWindow::createParaboloid()
 {
-    Handle(MGeom_Paraboloid) par = new MGeom_Paraboloid(this);
+    MGeom_Paraboloid* par = new MGeom_Paraboloid(this);
     par->showDialog();
+
 }

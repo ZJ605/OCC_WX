@@ -77,7 +77,6 @@ void MGeom_ParabolaDialog::bindEvents()
     ln_focal->Bind(wxTE_PROCESS_ENTER, &MGeom_ParabolaDialog::onLn_focalEnterDown, this);
     //ln_focal->Bind(wxEVT_KEY_DOWN, &MGeom_ParabolaDialog::onLn_focalKeyDown, this);
     Bind(wxEVT_KEY_DOWN, &MGeom_ParabolaDialog::onEnterDown, this);
-
 }
 
 void MGeom_ParabolaDialog::Onbtn_cancelClick(wxCommandEvent& event)
@@ -89,7 +88,8 @@ void MGeom_ParabolaDialog::Onbtn_cancelClick(wxCommandEvent& event)
 
 void MGeom_ParabolaDialog::Onbtn_applyClick(wxCommandEvent& event)
 {
-    m_paraboloid->updateDialog();
+    //m_paraboloid->updateDialog();
+    m_paraboloid->onUpdateDialog();
     this->Hide();
 }
 
@@ -122,5 +122,6 @@ void MGeom_ParabolaDialog::onEnterDown( wxKeyEvent& event)
 }
 wxString MGeom_ParabolaDialog::getFocalDistance()
 {
+    std::cout << "return " << ln_focal->GetValue() << std::endl;
     return ln_focal->GetValue();
 }

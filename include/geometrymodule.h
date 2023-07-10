@@ -14,10 +14,10 @@
 class GeometryModule
 {
     public:
-        GeometryModule();
+        GeometryModule(wxMDIParentFrame* parent);
         virtual ~GeometryModule();
 
-        void createWindow(wxMDIParentFrame* parent);
+        //void createWindow(wxMDIParentFrame* parent);
 
         void addGeometry(Handle(MGeom) geom);
 

@@ -5,7 +5,7 @@
 #include "geometrywindow.h"
 
 MGeom_Paraboloid::MGeom_Paraboloid(GeometryWindow* parent): MGeom(parent), m_degu(3), m_degv(3), m_focaldistance(15), m_miny(-30.0), m_maxy(30.0)
-, m_minz(-30.0), m_maxz(30.0), m_stepy(1), m_stepz(1), m_vertex(0.0,0.0,0.0)
+, m_minz(-30.0), m_maxz(30.0), m_stepy(1), m_stepz(1), m_vertex(0.0,0.0,0.0), m_added2model(false)
 
 {
     initDialog(parent);
@@ -31,12 +31,10 @@ char* MGeom_Paraboloid::getMgeomType()
 
 bool MGeom_Paraboloid::calculate()
 {
-    //std::cout << "focal " << m_focaldistance << std::endl;
     double county = int((m_maxy - m_miny)/m_stepy) + 1;
     double countz = int((m_maxz - m_minz)/m_stepz) + 1;
     m_points = TColgp_Array2OfPnt(0,county-1,0,countz-1);
     double multiplicator = 1.0/(4.0*m_focaldistance);
-    //std::cout << "county " << county << " countz " << countz << std::endl;
     for (int i = 0; i < county; i++) {
         for (int j = 0; j < countz; j++)
         {
@@ -44,7 +42,6 @@ bool MGeom_Paraboloid::calculate()
             double z = m_minz + j*m_stepz;
             double x = multiplicator*((y-m_vertex.Y())*(y-m_vertex.Y()) + (z-m_vertex.Z())*(z-m_vertex.Z())) + m_vertex.X();
             m_points.SetValue(i,j,gp_Pnt(x,y,z));
-
         }
     }
 
@@ -82,11 +79,9 @@ bool MGeom_Paraboloid::calculate()
     if (!m_surf)
     {
         m_surf = new Geom_BSplineSurface(m_points, m_knotsu, m_knotsv, m_multu, m_multv, m_degu, m_degv, false, false);
-        //std::cout << "a" << std::endl;
     }
     else
     {
-        //std::cout << "b" << std::endl;
         m_surf = new Geom_BSplineSurface(m_points, m_knotsu, m_knotsv, m_multu, m_multv, m_degu, m_degv, false, false);
     }
 
@@ -105,35 +100,20 @@ void MGeom_Paraboloid::showDialog()
 
 void MGeom_Paraboloid::onUpdateDialog()
 {
-    //std::cout << "updated in " << std::endl;
-    double num = 0;
-    if (MParser::text2doubleNumber(m_dialog->ln_focal->GetLabel().ToStdString(),num))
-    {
-        //std::cout << "num " << num <<std::endl;
-        setFocalDistance(num);
-        calculate();
-    }
-    //else
-        //std::cout << "not num " << m_dialog->ln_focal->GetValue() <<std::endl;
-}
-
-void MGeom_Paraboloid::updateDialog()
-{
     double num = 0;
     if (MParser::text2doubleNumber(m_dialog->getFocalDistance().ToStdString(),num))
     {
-        //std::cout << "num " << num <<std::endl;
         setFocalDistance(num);
         calculate();
+        if (!m_added2model)
+            m_geomwindow->addGeometry(this);
         m_geomwindow->onUpdateGeometry();
     }
     else
-        std::cout << "not num " << m_dialog->getFocalDistance() <<std::endl;
-
+        std::cout << "not num " << m_dialog->ln_focal->GetValue() <<std::endl;
 }
 
 void MGeom_Paraboloid::initDialog(GeometryWindow* parent)
 {
     m_dialog = new MGeom_ParabolaDialog(parent, this);
-    //showDialog();
 }
